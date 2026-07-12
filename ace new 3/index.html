@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACE ENERGY SERVICE - Solar Power Expert</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="container header-container">
+                        <div class="logo-group">
+                    <a href="#" id="logoLink1">
+                        <img src="img/Logo-ACEES-PNG-ashif-1536x1122.png" alt="ACE ENERGY SERVICE" class="logo-img logo-img-main" />
+                    </a>
+                    <a href="#" id="logoLink2">
+                        <img src="img/logoace.png" alt="ACE ENERGY SERVICE" class="logo-img logo-img-secondary" />
+                    </a>
+                </div>
+
+            <nav class="nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link active" data-page="home" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="about" data-i18n="nav.about">About</a></li>
+                    <li><a href="#" class="nav-link" data-page="services" data-i18n="nav.services">Services</a></li>
+                    <li><a href="#" class="nav-link" data-page="projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="#" class="nav-link" data-page="contact" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="id">ID</button>
+                    <button class="lang-btn" data-lang="ko">KO</button>
+                </div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== MAIN ===== -->
+    <main>
+
+        <!-- ===== PAGE: HOME ===== -->
+        <section class="page-section active" id="page-home">
+            <div class="hero" id="heroSection">
+                <!-- Video Background -->
+                <div class="hero-video-bg">
+                    <video autoplay muted loop playsinline>
+                        <source src="img/profilAce.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <!-- Overlay gelap -->
+                <div class="hero-overlay"></div>
+
+                <!-- Konten -->
+                <div class="hero-content container">
+                    <div class="hero-text">
+                        <span class="hero-badge" data-i18n="hero.badge">Indonesia's No.1 Solar EPC &amp; O&M</span>
+                        <h1 data-i18n="hero.title">Powering Indonesia's <br /><span>Solar Future</span></h1>
+                        <p data-i18n="hero.subtitle">PT. ACE ENERGY SERVICE delivers world-class solar PV solutions — from EPC to O&M — for a sustainable tomorrow.</p>
+                        <div class="hero-buttons">
+                            <a href="#" class="btn btn-primary" data-page="services" data-i18n="hero.cta1">Explore Services</a>
+                            <a href="#" class="btn btn-outline" data-page="contact" data-i18n="hero.cta2">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company at a Glance -->
+            <div class="section glance-section">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag" data-i18n="glance.tag">Company at a Glance</span>
+                        <h2 data-i18n="glance.title">ACE ENERGY SERVICE</h2>
+                        <p data-i18n="glance.subtitle">PT. ACE ENERGY SERVICE is the largest solar energy project developer in Indonesia.</p>
+                    </div>
+                    <div class="glance-grid">
+                        <div class="glance-card">
+                            <div class="glance-icon"><i class="fas fa-solar-panel"></i></div>
+                            <h3 data-i18n="glance.card1.title">Solar EPC Expert</h3>
+                            <p data-i18n="glance.card1.desc">End-to-end Engineering, Procurement &amp; Construction for solar PV systems.</p>
+                        </div>
+                        <div class="glance-card">
+                            <div class="glance-icon"><i class="fas fa-tools"></i></div>
+                            <h3 data-i18n="glance.card2.title">O&M Specialists</h3>
+                            <p data-i18n="glance.card2.desc">24/7 monitoring, preventive maintenance, and performance optimization.</p>
+                        </div>
+                        <div class="glance-card">
+                            <div class="glance-icon"><i class="fas fa-leaf"></i></div>
+                            <h3 data-i18n="glance.card3.title">Sustainability Focus</h3>
+                            <p data-i18n="glance.card3.desc">Driving Indonesia's clean energy transition with reliable solar solutions.</p>
+                        </div>
+                        <div class="glance-card">
+                            <div class="glance-icon"><i class="fas fa-building"></i></div>
+                            <h3 data-i18n="glance.card4.title">30+ Years Heritage</h3>
+                            <p data-i18n="glance.card4.desc">Backed by ACE E&C's B2 Grade construction license &amp; multi-disciplinary expertise.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="section stats-section">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="15">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label" data-i18n="stats.projects">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="10">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label" data-i18n="stats.years">Years of Expertise</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="800">0</span>
+                            <span class="stat-label" data-i18n="stats.revenue">Revenue (IDR Billion)</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="15">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label" data-i18n="stats.team">Expert Team</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: ABOUT ===== -->
+        <section class="page-section" id="page-about">
+            <div class="section about-section">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag" data-i18n="about.tag">About Us</span>
+                        <h2 data-i18n="about.title">Your Trusted Partner in Solar Energy</h2>
+                        <p data-i18n="about.subtitle">We are Korea's No. 1 Solar Power Development &amp; EPC, O&M Company in Indonesia.</p>
+                    </div>
+
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <h3 data-i18n="about.ace.title">PT. ACE ENERGY SERVICE</h3>
+                            <p data-i18n="about.ace.p1">We launched our Renewable Energy and O&M business in November 2019. ACE ENERGY SERVICE is a leading EPC company in Indonesia, specializing in solar PV energy solutions and renewable energy operations &amp; maintenance (O&M).</p>
+                            <p data-i18n="about.ace.p2">Building a greener future, starting today. We are committed to taking action now — through sustainable solutions and responsible innovation — to ensure a cleaner, healthier environment for generations to come.</p>
+                            <div class="about-badge">
+                                <i class="fas fa-check-circle"></i>
+                                <span data-i18n="about.ace.badge">Indonesia's No.1 Solar EPC &amp; O&M</span>
+                            </div>
+                        </div>
+                        <div class="about-image">
+                            <img src="img/RTS039.jpg" alt="ACE ENERGY SERVICE Office" class="about-img" />
+                        </div>
+                    </div>
+
+                    <div class="parent-company">
+                        <h3 data-i18n="about.parent.title">About E&C (Parent Company)</h3>
+                        <p data-i18n="about.parent.p1">ACE E&C is a leading construction company with over 30 years of expertise in large-scale factory and energy plant projects across Indonesia. We hold a B2 Grade construction license, the highest classification in the country.</p>
+                        <div class="parent-grid">
+                            <div class="parent-item">
+                                <i class="fas fa-trophy"></i>
+                                <span data-i18n="about.parent.item1">B2 Grade License</span>
+                            </div>
+                            <div class="parent-item">
+                                <i class="fas fa-industry"></i>
+                                <span data-i18n="about.parent.item2">15+ Projects</span>
+                            </div>
+                            <div class="parent-item">
+                                <i class="fas fa-users"></i>
+                                <span data-i18n="about.parent.item3">Multi-disciplinary Team</span>
+                            </div>
+                            <div class="parent-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span data-i18n="about.parent.item4">IDR 1.2T Revenue (2023)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="strengths">
+                        <h3 data-i18n="about.strengths.title">Our Strengths</h3>
+                        <p class="strengths-quote" data-i18n="about.strengths.quote">"Quality and reliability are the foundation of every project we deliver."</p>
+                        <div class="strengths-grid">
+                            <div class="strength-card">
+                                <i class="fas fa-user-graduate"></i>
+                                <h4 data-i18n="about.strengths.s1.title">Professional Team</h4>
+                                <p data-i18n="about.strengths.s1.desc">Cross-disciplinary expertise in engineering, legal, and business.</p>
+                            </div>
+                            <div class="strength-card">
+                                <i class="fas fa-globe"></i>
+                                <h4 data-i18n="about.strengths.s2.title">International Standards</h4>
+                                <p data-i18n="about.strengths.s2.desc">Design and installation that meet global quality benchmarks.</p>
+                            </div>
+                            <div class="strength-card">
+                                <i class="fas fa-recycle"></i>
+                                <h4 data-i18n="about.strengths.s3.title">Sustainable Excellence</h4>
+                                <p data-i18n="about.strengths.s3.desc">Dependable solutions, optimized energy, and a sustainable future.</p>
+                            </div>
+                            <div class="strength-card">
+                                <i class="fas fa-microchip"></i>
+                                <h4 data-i18n="about.strengths.s4.title">High Quality Material</h4>
+                                <p data-i18n="about.strengths.s4.desc">Tier-1 equipment and the latest solar technology.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: SERVICES ===== -->
+        <section class="page-section" id="page-services">
+            <div class="section services-section">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag" data-i18n="services.tag">Our Core Services</span>
+                        <h2 data-i18n="services.title">Committed to Excellence</h2>
+                        <p data-i18n="services.subtitle">"All-in-one integrated solar energy solutions at your fingertips"</p>
+                    </div>
+
+                    <div class="service-tabs">
+                        <button class="service-tab active" data-service="0" data-i18n="services.tab1">O&amp;M</button>
+                        <button class="service-tab" data-service="1" data-i18n="services.tab2">Commercial EPC</button>
+                        <button class="service-tab" data-service="2" data-i18n="services.tab3">Residential EPC</button>
+                        <button class="service-tab" data-service="3" data-i18n="services.tab4">Agricultural EPC</button>
+                        <button class="service-tab" data-service="4" data-i18n="services.tab5">REC</button>
+                        <button class="service-tab" data-service="5" data-i18n="services.tab6">BESS</button>
+                        <button class="service-tab" data-service="6" data-i18n="services.tab7">PPP &amp; IPP</button>
+                    </div>
+
+                    <div class="service-content-wrapper">
+                        <!-- O&M -->
+                        <div class="service-content active" data-service="0">
+                            <div class="service-detail">
+                                <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                                <div class="service-info">
+                                    <h3 data-i18n="services.om.title">Solar PV O&amp;M Service</h3>
+                                    <p data-i18n="services.om.desc">ACE ENERGY SERVICE's O&amp;M service ensures your solar power system operates at peak performance. We provide real-time monitoring, routine inspections, preventive maintenance, and corrective repairs.</p>
+                                    <ul class="service-features">
+                                        <li data-i18n="services.om.f1"><i class="fas fa-check"></i> 24/7 monitoring with digital system</li>
+                                        <li data-i18n="services.om.f2"><i class="fas fa-check"></i> Experienced &amp; certified technical team</li>
+                                        <li data-i18n="services.om.f3"><i class="fas fa-check"></i> Preventive &amp; predictive maintenance</li>
+                                        <li data-i18n="services.om.f4"><i class="fas fa-check"></i> Transparent performance reports</li>
+                                        <li data-i18n="services.om.f5"><i class="fas fa-check"></i> Fast response for emergency repairs</li>
+                                    </ul>
+                                </div>
+                                <div class="service-image">
+                                    <div class="img-placeholder small"><i class="fas fa-tools"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Commercial -->
+                        <div class="service-content" data-service="1">
+                            <div class="service-detail">
+                                <div class="service-icon"><i class="fas fa-building"></i></div>
+                                <div class="service-info">
+                                    <h3 data-i18n="services.commercial.title">Industrial / Commercial Solar PV EPC</h3>
+                                    <p data-i18n="services.commercial.desc">EPC solar PV solutions for factories, warehouses, offices, shopping centers, hotels, and other business facilities. Reduce electricity costs and enhance sustainability.</p>
+                                    <ul class="service-features">
+                                        <li data-i18n="services.commercial.f1"><i class="fas fa-check"></i> Tailored system design</li>
+                                        <li data-i18n="services.commercial.f2"><i class="fas fa-check"></i> High-quality international standard components</li>
+                                        <li data-i18n="services.commercial.f3"><i class="fas fa-check"></i> Fast, efficient, safe construction</li>
+                                        <li data-i18n="services.commercial.f4"><i class="fas fa-check"></i> Flexible investment schemes</li>
+                                        <li data-i18n="services.commercial.f5"><i class="fas fa-check"></i> Supports ESG &amp; Sustainability Reporting</li>
+                                    </ul>
+                                </div>
+                                <div class="service-image">
+                                    <div class="img-placeholder small"><i class="fas fa-industry"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Residential -->
+                        <div class="service-content" data-service="2">
+                            <div class="service-detail">
+                                <div class="service-icon"><i class="fas fa-home"></i></div>
+                                <div class="service-info">
+                                    <h3 data-i18n="services.residential.title">Residential Solar PV EPC</h3>
+                                    <p data-i18n="services.residential.desc">Solar PV services for the residential sector. Rooftop installations help reduce monthly electricity costs while contributing to a greener environment.</p>
+                                    <ul class="service-features">
+                                        <li data-i18n="services.residential.f1"><i class="fas fa-check"></i> Customized rooftop design</li>
+                                        <li data-i18n="services.residential.f2"><i class="fas fa-check"></i> Fast, neat, safe installation</li>
+                                        <li data-i18n="services.residential.f3"><i class="fas fa-check"></i> 25-year solar panel warranty</li>
+                                        <li data-i18n="services.residential.f4"><i class="fas fa-check"></i> App for monitoring consumption &amp; production</li>
+                                        <li data-i18n="services.residential.f5"><i class="fas fa-check"></i> Post-installation technical support</li>
+                                    </ul>
+                                </div>
+                                <div class="service-image">
+                                    <div class="img-placeholder small"><i class="fas fa-house-chimney"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Agri -->
+                        <div class="service-content" data-service="3">
+                            <div class="service-detail">
+                                <div class="service-icon"><i class="fas fa-tractor"></i></div>
+                                <div class="service-info">
+                                    <h3 data-i18n="services.agri.title">Agricultural &amp; Livestock Solar PV EPC</h3>
+                                    <p data-i18n="services.agri.desc">Tailored solar PV solutions for agriculture and livestock. Cut electricity costs for irrigation, water pumps, cooling, and lighting.</p>
+                                    <ul class="service-features">
+                                        <li data-i18n="services.agri.f1"><i class="fas fa-check"></i> Energy-efficient irrigation &amp; pumps</li>
+                                        <li data-i18n="services.agri.f2"><i class="fas fa-check"></i> Solar-powered lighting &amp; cooling</li>
+                                        <li data-i18n="services.agri.f3"><i class="fas fa-check"></i> Off-grid / hybrid technology</li>
+                                        <li data-i18n="services.agri.f4"><i class="fas fa-check"></i> Increased productivity, lower costs</li>
+                                        <li data-i18n="services.agri.f5"><i class="fas fa-check"></i> Eco-friendly energy for modern agriculture</li>
+                                    </ul>
+                                </div>
+                                <div class="service-image">
+                                    <div class="img-placeholder small"><i class="fas fa-seedling"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- REC -->
+                        <div class="service-content" data-service="4">
+                            <div class="service-detail">
+                                <div class="service-icon"><i class="fas fa-certificate"></i></div>
+                                <div class="service-info">
+                                    <h3 data-i18n="services.rec.title">REC (Renewable Energy Certificate) Management</h3>
+                                    <p data-i18n="services.rec.desc">A Renewable Energy Certificate (REC) is official proof of renewable energy usage. We help companies obtain RECs to support Net Zero Emission targets and ESG reporting.</p>
+                                    <ul class="service-features">
+                                        <li data-i18n="services.rec.f1"><i class="fas fa-check"></i> Full REC administrative assistance</li>
+                                        <li data-i18n="services.rec.f2"><i class="fas fa-check"></i> International REC provider network</li>
+                                        <li data-i18n="services.rec.f3"><i class="fas fa-check"></i> Competitive &amp; transparent pricing</li>
+                                        <li data-i18n="services.rec.f4"><i class="fas fa-check"></i> Supports ESG &amp; Green Financing</li>
+                                        <li data-i18n="services.rec.f5"><i class="fas fa-check"></i> Achieve Net Zero Emission targets</li>
+                                    </ul>
+                                </div>
+                                <div class="service-image">
+                                    <div class="img-placeholder small"><i class="fas fa-file-certificate"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- BESS -->
+                        <div class="service-content" data-service="5">
+                            <div class="service-detail">
+                                <div class="service-icon"><i class="fas fa-battery-full"></i></div>
+                                <div class="service-info">
+                                    <h3 data-i18n="services.bess.title">Battery Energy Storage System (BESS)</h3>
+                                    <p data-i18n="services.bess.desc">BESS solutions answer the challenges of renewable energy integration. Store solar energy for use anytime, day or night.</p>
+                                    <ul class="service-features">
+                                        <li data-i18n="services.bess.f1"><i class="fas fa-check"></i> Energy Shifting</li>
+                                        <li data-i18n="services.bess.f2"><i class="fas fa-check"></i> Grid Stability</li>
+                                        <li data-i18n="services.bess.f3"><i class="fas fa-check"></i> Backup Power</li>
+                                        <li data-i18n="services.bess.f4"><i class="fas fa-check"></i> Integration with Renewables</li>
+                                    </ul>
+                                </div>
+                                <div class="service-image">
+                                    <div class="img-placeholder small"><i class="fas fa-bolt"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PPP -->
+                        <div class="service-content" data-service="6">
+                            <div class="service-detail">
+                                <div class="service-icon"><i class="fas fa-handshake"></i></div>
+                                <div class="service-info">
+                                    <h3 data-i18n="services.ppp.title">PPP &amp; Independent Power Producer</h3>
+                                    <p data-i18n="services.ppp.desc">Public-Private Partnership and IPP project development. We combine public and private sector efficiency for large-scale solar power projects.</p>
+                                    <ul class="service-features">
+                                        <li data-i18n="services.ppp.f1"><i class="fas fa-check"></i> BOT / BOO project structures</li>
+                                        <li data-i18n="services.ppp.f2"><i class="fas fa-check"></i> PPA &amp; financial structuring</li>
+                                        <li data-i18n="services.ppp.f3"><i class="fas fa-check"></i> Regulatory &amp; licensing expertise</li>
+                                        <li data-i18n="services.ppp.f4"><i class="fas fa-check"></i> Grid access &amp; capacity assessment</li>
+                                    </ul>
+                                </div>
+                                <div class="service-image">
+                                    <div class="img-placeholder small"><i class="fas fa-handshake"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: PROJECTS ===== -->
+        <section class="page-section" id="page-projects">
+            <div class="section projects-section">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag" data-i18n="projects.tag">Featured Projects</span>
+                        <h2 data-i18n="projects.title">Our Solar Portfolio</h2>
+                        <p data-i18n="projects.subtitle">Delivering excellence across Indonesia — from industrial rooftops to utility-scale solar farms.</p>
+                    </div>
+
+                    <div class="projects-grid">
+                        <!-- Proyek 1 -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/hwi.jpg" alt="PT. Hwa Seung Indonesia" class="project-img" />
+                            </div>
+                            <div class="project-info">
+                                <h4 data-i18n="projects.p1.name">PT. Hwa Seung Indonesia</h4>
+                                <p data-i18n="projects.p1.detail">Jepara · 4.1 MWp</p>
+                            </div>
+                        </div>
+
+                        <!-- Proyek 2 -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/pwj.jpg" alt="PT. Parkland World Indonesia" class="project-img" />
+                            </div>
+                            <div class="project-info">
+                                <h4 data-i18n="projects.p2.name">PT. Parkland World Indonesia</h4>
+                                <p data-i18n="projects.p2.detail">Jepara · 2.4 MWp</p>
+                            </div>
+                        </div>
+
+                        <!-- Proyek 3 -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/hsk.jpg" alt="PT. Handal Sukses Karya" class="project-img" />
+                            </div>
+                            <div class="project-info">
+                                <h4 data-i18n="projects.p3.name">PT. Handal Sukses Karya</h4>
+                                <p data-i18n="projects.p3.detail">Jepara · 1.1 MWp</p>
+                            </div>
+                        </div>
+
+                        <!-- Proyek 4 -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/kanindo.jpg" alt="PT. Kanindo Makmur Jaya 2" class="project-img" />
+                            </div>
+                            <div class="project-info">
+                                <h4 data-i18n="projects.p4.name">PT. Kanindo Makmur Jaya 2</h4>
+                                <p data-i18n="projects.p4.detail">Jepara · 589 kWp</p>
+                            </div>
+                        </div>
+
+                        <!-- Proyek 5 -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/shinsung.jpg" alt="PT. Shinsung Grand Indonesia" class="project-img" />
+                            </div>
+                            <div class="project-info">
+                                <h4 data-i18n="projects.p5.name">PT. Shinsung Grand Indonesia</h4>
+                                <p data-i18n="projects.p5.detail">Pemalang · 53 kWp</p>
+                            </div>
+                        </div>
+
+                        <!-- Proyek 6 -->
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/kaiti.jpg" alt="PT. Kaiti Global Indonesia" class="project-img" />
+                            </div>
+                            <div class="project-info">
+                                <h4 data-i18n="projects.p6.name">PT. Kaiti Global Indonesia</h4>
+                                <p data-i18n="projects.p6.detail">Cirebon · 31.8 kWp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PAGE: CONTACT ===== -->
+        <section class="page-section" id="page-contact">
+            <div class="section contact-section">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-tag" data-i18n="contact.tag">Contact Us</span>
+                        <h2 data-i18n="contact.title">Let's Build a Greener Future</h2>
+                        <p data-i18n="contact.subtitle">Get in touch with our solar energy experts today.</p>
+                    </div>
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <div class="contact-card">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4 data-i18n="contact.address.title">Office Address</h4>
+                                    <p data-i18n="contact.address.desc">Alamanda Tower, Jl. TB Simatupang No.22-26, Cilandak Barat, Jakarta Selatan 12430</p>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <h4 data-i18n="contact.phone.title">Phone</h4>
+                                    <p>+62 877-7005-1282 (Faizan)<br />+62 812-1857-8050 (Febra)<br />+62 856-9752-1395 (Mega)</p>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4 data-i18n="contact.email.title">Email</h4>
+                                    <p>admin@aceenergyservice.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-badges">
+                                <span><i class="fas fa-certificate"></i> ISO 9001:2015</span>
+                                <span><i class="fas fa-certificate"></i> ISO 14001:2015</span>
+                                <span><i class="fas fa-certificate"></i> ISO 45001:2018</span>
+                                <span><i class="fas fa-id-card"></i> D&B 5126042563</span>
+                            </div>
+                        </div>
+                        <div class="contact-form-wrapper">
+                            <form class="contact-form" id="contactForm">
+                                <div class="form-group">
+                                    <label data-i18n="contact.form.name">Full Name</label>
+                                    <input type="text" placeholder="Your name" required />
+                                </div>
+                                <div class="form-group">
+                                    <label data-i18n="contact.form.email">Email Address</label>
+                                    <input type="email" placeholder="your@email.com" required />
+                                </div>
+                                <div class="form-group">
+                                    <label data-i18n="contact.form.phone">Phone Number</label>
+                                    <input type="text" placeholder="+62 ..." />
+                                </div>
+                                <div class="form-group">
+                                    <label data-i18n="contact.form.message">Message</label>
+                                    <textarea rows="4" placeholder="Tell us about your solar project..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="img/logoace.png" alt="ACE ENERGY SERVICE" class="logo-footer-img" />
+                    <p data-i18n="footer.tagline">Indonesia's No.1 Solar Power Development &amp; EPC, O&amp;M Company</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/pt-aceenergyservice/?viewAsMember=true"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@aceenergyservice12"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/aceenergyservice/?hl=ar"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+                    <ul>
+                        <li><a href="#" data-page="home" data-i18n="nav.home">Home</a></li>
+                        <li><a href="#" data-page="about" data-i18n="nav.about">About</a></li>
+                        <li><a href="#" data-page="services" data-i18n="nav.services">Services</a></li>
+                        <li><a href="#" data-page="projects" data-i18n="nav.projects">Projects</a></li>
+                        <li><a href="#" data-page="contact" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer.services">Our Services</h4>
+                    <ul>
+                        <li><a href="#" data-page="services" data-service="0" data-i18n="footer.s1">Solar O&amp;M</a></li>
+                        <li><a href="#" data-page="services" data-service="1" data-i18n="footer.s2">Commercial EPC</a></li>
+                        <li><a href="#" data-page="services" data-service="2" data-i18n="footer.s3">Residential EPC</a></li>
+                        <li><a href="#" data-page="services" data-service="4" data-i18n="footer.s4">REC Management</a></li>
+                        <li><a href="#" data-page="services" data-service="5" data-i18n="footer.s5">BESS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-i18n="footer.contactUs">Contact Us</h4>
+                    <p><i class="fas fa-map-pin"></i> <span data-i18n="contact.address.desc">Alamanda Tower, Jakarta</span></p>
+                    <p><i class="fas fa-phone"></i> +62 877-7005-1282</p>
+                    <p><i class="fas fa-envelope"></i> admin@aceenergyservice.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <span data-i18n="footer.copyright">ACE ENERGY SERVICE. All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
