@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ACE Energy Service | Solar PV Expert</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+       <div class="logo-area">
+  <img src="img/logo.png" alt="Company Logo" class="logo-img" onerror="this.src='https://placehold.co/60x60/0A2B4E/white?text=ACE'">
+  <img src="img/logoace.png" alt="Company Logo" class="logo-img" onerror="this.src='https://placehold.co/60x60/0A2B4E/white?text=ACE'">
+</div>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+        <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
+        <a href="strength.html" class="nav-link" data-i18n="nav_strength">Strengths</a>
+        <a href="services.html" class="nav-link" data-i18n="nav_services">Services</a>
+        <a href="projects.html" class="nav-link" data-i18n="nav_projects">Projects</a>
+        <a href="#" class="nav-link" data-i18n="nav_contact">Contact</a>
+      </div>
+      <div class="lang-selector">
+        <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+        <button class="lang-btn" data-lang="id">🇮🇩 ID</button>
+        <button class="lang-btn" data-lang="ko">🇰🇷 KO</button>
+      </div>
+      <div class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu hidden">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="strength.html" data-i18n="nav_strength">Strengths</a>
+      <a href="services.html" data-i18n="nav_services">Services</a>
+      <a href="projects.html" data-i18n="nav_projects">Projects</a>
+      <a href="#" data-i18n="nav_contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Contact -->
+  <section id="contact" class="section bg-light">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="contact_tag">Get In Touch</span>
+        <h2 data-i18n="contact_title">Let's Build a Greener Future</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-form reveal">
+          <h3 data-i18n="contact_form_title">Send a Message</h3>
+          <form id="contactForm">
+            <input type="text" placeholder="Full Name" data-i18n-placeholder="contact_name" required>
+            <input type="email" placeholder="Email Address" data-i18n-placeholder="contact_email" required>
+            <textarea rows="4" placeholder="Your message" data-i18n-placeholder="contact_message"></textarea>
+            <button type="submit" class="btn-primary" data-i18n="contact_send">Send Inquiry <i class="fas fa-paper-plane"></i></button>
+          </form>
+          <div id="formResponse"></div>
+        </div>
+        <div class="contact-info reveal">
+          <div><i class="fas fa-map-marker-alt"></i><p>Alamanda Tower, TB Simatupang No.22-26, Jakarta Selatan, 12430</p></div>
+          <div><i class="fas fa-phone-alt"></i><p>+62 877-7005-1282 (Faizan) | +62 812-1857-8050 (Febra)</p></div>
+          <div><i class="fas fa-envelope"></i><p> admin@aceenergyservice.com</p></div>
+          <div class="map-placeholder"><iframe src="https://maps.google.com/maps?q=Alamanda+Tower+Jakarta&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      <footer>
+    <div class="container footer-grid">
+      <div><img src="img/logoace.png" alt="Logo ACE" class="footer-logo" onerror="this.src='https://placehold.co/120x40/0A2B4E/white?text=ACE'"><p data-i18n="footer_text">Indonesia's No.1 Solar EPC & O&M since 2019.</p></div>
+      <div><h4 data-i18n="footer_links">Quick Links</h4><a href="#home" data-i18n="nav_home">Home</a><a href="#services" data-i18n="nav_services">Services</a><a href="#projects" data-i18n="nav_projects">Projects</a><a href="#contact" data-i18n="nav_contact">Contact</a></div>
+      <div><h4 data-i18n="footer_cert">Certifications</h4><p>ISO 9001:2015</p><p>ISO 14001:2015</p><p>ISO 45001:2018</p><p> D&B 5126042563</p></div>
+      <div class="social-icons">
+      <a href="https://www.linkedin.com/jobs/view/3704857284/" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.instagram.com/ace_energys?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/channel/UC1hkItH_WgTXwnmJC5CSWLg" target="_blank" aria-label="YouTube">
+      <i class="fab fa-youtube"></i>
+  </a>
+</div>    </div>
+    <div class="copyright" data-i18n="copyright">© 2026 ACE ENERGY SERVICE. All rights reserved.</div>
+  </footer>
+
+  <!-- Modal Popup -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <div class="modal-capacity"><strong data-i18n="modal_capacity">Kapasitas:</strong> <span id="modalCapacity"></span></div>
+      <button class="btn-primary modal-btn" onclick="window.location.href='#contact'" data-i18n="modal_button">Hubungi Kami</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

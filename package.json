@@ -1,0 +1,10 @@
+{
+  "name": "project-ace-root",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "cd ace-new && npm run dev",
+    "build": "cd ace-new && npm run build",
+    "preview": "cd ace-new && npm run preview"
+  }
+}

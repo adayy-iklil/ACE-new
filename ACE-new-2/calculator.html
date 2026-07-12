@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ACE Energy | ROI Calculator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-area">
+        <div class="logo-img-wrapper">
+          <img src="img/logo.png" alt="ACE Energy Logo" class="navbar-logo-img">
+          <img src="img/logoace.png" alt="ACE Energy Logo" class="navbar-logo-img">
+        </div>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+        <a href="about.html" class="nav-link" data-i18n="nav_about">About</a>
+        <a href="services.html" class="nav-link" data-i18n="nav_services">Solutions</a>
+        <a href="calculator.html" class="nav-link active" data-i18n="nav_calc">ROI Calculator</a>
+        <a href="projects.html" class="nav-link" data-i18n="nav_projects">Portfolio</a>
+        <a href="contact.html" class="nav-link nav-cta" data-i18n="nav_contact">Get Consultation</a>
+      </div>
+      <div class="nav-right">
+        <div class="lang-dropdown">
+          <button class="lang-dropbtn" id="currentLangBtn">🇬🇧 EN <i class="fas fa-chevron-down"></i></button>
+          <div class="lang-dropdown-content">
+            <button data-lang="en">🇬🇧 English</button>
+            <button data-lang="id">🇮🇩 Indonesia</button>
+            <button data-lang="ko">🇰🇷 한국어</button>
+          </div>
+        </div>
+        <div class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></div>
+      </div>
+    </div>
+  </nav>
+
+  <div id="mobileMenu" class="mobile-menu-overlay hidden">
+    <div class="mobile-menu-content">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="services.html" data-i18n="nav_services">Solutions</a>
+      <a href="calculator.html" data-i18n="nav_calc">ROI Calculator</a>
+      <a href="projects.html" data-i18n="nav_projects">Portfolio</a>
+      <a href="contact.html" data-i18n="nav_contact">Get Consultation</a>
+    </div>
+  </div>
+
+  <!-- CALCULATOR -->
+  <section id="calculator" class="calculator-section image-bg-section">
+    <div class="container">
+      <div class="section-center-header reveal">
+        <span class="sub-headline" data-i18n="nav_calc">Interactive Assessment</span>
+        <h2 class="section-title" data-i18n="calc_title">Estimate Your Solar Yield instantly</h2>
+        <p class="sub-desc" data-i18n="calc_subtitle">Input your average monthly electrical expenditures to see how much you could optimize.</p>
+      </div>
+      <div class="calc-card reveal">
+        <div class="calc-input-area">
+          <label for="billRange" data-i18n="calc_label">Monthly Electricity Bill (IDR):</label>
+          <div class="range-wrapper">
+            <input type="range" id="billRange" min="2000000" max="100000000" step="1000000" value="15000000">
+            <div class="range-values">
+              <span>2M</span>
+              <span id="currentBillVal" class="bill-highlight">IDR 15,000,000</span>
+              <span>100M+</span>
+            </div>
+          </div>
+        </div>
+        <div class="calc-results-grid">
+          <div class="result-box-premium">
+            <h5 data-i18n="calc_res1">Est. Monthly Savings</h5>
+            <p id="saveMonthly">IDR 12,000,000</p>
+          </div>
+          <div class="result-box-premium">
+            <h5 data-i18n="calc_res2">Recommended System Size</h5>
+            <p id="systemSize">12.5 kWp</p>
+          </div>
+          <div class="result-box-premium highlight-border">
+            <h5 data-i18n="calc_res3">CO2 Offset / Year</h5>
+            <p id="co2Offset">14.8 Tons</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (sama) -->
+  <footer class="footer-modern">
+    <div class="container">
+      <div class="footer-wrapper">
+        <div class="footer-brand">
+          <div class="f-logo-wrap">
+            <img src="img/logoace.png" alt="ACE Energy" class="footer-logo-img">
+          </div>
+          <p class="footer-tagline" data-i18n="footer_tagline">“Indonesia Solar PV Energy Expert”</p>
+          <div class="footer-certs">
+            <span>ISO 9001:2015</span>
+            <span>ISO 14001:2015</span>
+            <span>ISO 45001:2018</span>
+          </div>
+          <div class="footer-duns">D&B 5126042563</div>
+        </div>
+        <div class="footer-contact">
+          <h4><i class="fas fa-phone-alt"></i> Contact</h4>
+          <p><strong>Faizan Fahlevi Edrial</strong><br><a href="tel:+6287770051282">+62 877-7005-1282</a></p>
+          <h4 style="margin-top:12px;"><i class="fas fa-envelope"></i> Email</h4>
+          <p><a href="mailto:aceenergyservice@ptaceenc.com">aceenergyservice@ptaceenc.com</a></p>
+        </div>
+        <div class="footer-social">
+          <h4><i class="fas fa-share-alt"></i> Connect</h4>
+          <div class="f-socials">
+            <a href="https://www.linkedin.com/jobs/view/3704857284/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/ace_energys" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="f-copyright" data-i18n="copyright">&copy; 2026 ACE ENERGY SERVICE. All asset rights architecture preserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
