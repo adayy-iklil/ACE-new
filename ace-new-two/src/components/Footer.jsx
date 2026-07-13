@@ -10,11 +10,11 @@ export default function Footer() {
         <div className="footer-wrapper">
           <div className="footer-brand">
             <div className="f-logo-wrap">
-              <img 
-                src="/img/logoace.png" 
-                alt="ACE Energy" 
-                className="footer-logo-img" 
-                onError={(e) => { e.target.src = 'https://placehold.co/120x40/0A2B4E/white?text=ACE'; }} 
+              <img
+                src="/img/logoace.png"
+                alt="ACE Energy"
+                className="footer-logo-img"
+                onError={(e) => { e.target.src = 'https://placehold.co/120x40/0A2B4E/white?text=ACE'; }}
               />
             </div>
             <p className="footer-tagline">{t('footer_tagline')}</p>
@@ -30,7 +30,7 @@ export default function Footer() {
             <h4><i className="fas fa-phone-alt"></i> Contact</h4>
             <p><strong>Faizan Fahlevi Edrial</strong><br /><a href="tel:+6287770051282">+62 877-7005-1282</a></p>
             <h4 style={{ marginTop: '12px' }}><i class="fas fa-envelope"></i> Email</h4>
-            <p><a href="mailto:aceenergyservice@ptaceenc.com">aceenergyservice@ptaceenc.com</a></p>
+            <p><a href="mailto:admin@aceenergyservice.com">admin@aceenergyservice.com</a></p>
           </div>
 
           <div className="footer-social">
