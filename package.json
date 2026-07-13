@@ -3,8 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "cd ace-new-1 && npm run dev",
-    "build": "cd ace-new-1 && npm run build",
-    "preview": "cd ace-new-1 && npm run preview"
+    "dev": "cd ace-new-one && npm run dev",
+    "build": "cd ace-new-one && npm run build",
+    "preview": "cd ace-new-one && npm run preview"
   }
 }
