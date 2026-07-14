@@ -1098,3 +1098,35 @@ body {
   font-size: 1.2rem;
   font-weight: 600;
 }
+
+@media (min-width: 993px) {
+  .mobile-menu-overlay {
+    display: none !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-logo-img {
+    height: 36px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-left h1 {
+    font-size: 2rem !important;
+  }
+  .tag-badge {
+    font-size: 0.75rem;
+  }
+  .action-btn {
+    padding: 12px 20px;
+    font-size: 0.85rem;
+    text-align: center;
+    width: 100%;
+  }
+  .hero-action-group {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+}

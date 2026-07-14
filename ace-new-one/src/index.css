@@ -645,5 +645,17 @@ footer a:hover { color: #EBB42E; }
   .counter-grid { grid-template-columns: 1fr 1fr; }
   .section-header h2 { font-size: 32px; }
   .logo-text { font-size: 14px; }
-  .hero-content { padding-left: 20px; }
+  .hero-content { padding: 0 16px; }
+  .logo-img { height: 35px; }
+  .mobile-menu { display: flex; }
+  .mobile-menu.hidden { display: none; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 28px !important; }
+  .hero p { font-size: 16px; }
+  .hero-buttons { flex-direction: column; width: 100%; }
+  .btn-primary, .btn-secondary { justify-content: center; width: 100%; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .counter-grid { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: 1fr; }
 }
