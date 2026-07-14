@@ -10,7 +10,7 @@ import {
 import './Calculator.css';
 
 export default function Calculator() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   // Wizard Step State (Total 3 Steps)
   const [step, setStep] = useState(1);
@@ -69,7 +69,7 @@ export default function Calculator() {
 
   const handleNext = () => {
     if (step === 1 && (!clientName || !clientPhone || !clientEmail)) {
-      alert('Mohon lengkapi profil Nama, Nomor Telepon, dan Email terlebih dahulu.');
+      alert(t('calculator.alertFillProfile'));
       return;
     }
     if (step < 3) setStep(step + 1);
@@ -112,15 +112,15 @@ export default function Calculator() {
         <div className="stepper-progress">
           <div className={getStepClass(1)}>
             1
-            <span className="step-label">Profil Klien</span>
+            <span className="step-label">{t('calculator.step1Label')}</span>
           </div>
           <div className={getStepClass(2)}>
             2
-            <span className="step-label">Kebutuhan PLTS</span>
+            <span className="step-label">{t('calculator.step2Label')}</span>
           </div>
           <div className={getStepClass(3)}>
             3
-            <span className="step-label">Hasil Rekomendasi</span>
+            <span className="step-label">{t('calculator.step3Label')}</span>
           </div>
         </div>
 
@@ -130,35 +130,35 @@ export default function Calculator() {
           {/* STEP 1: CLIENT IDENTITY */}
           {step === 1 && (
             <div>
-              <h3 className="wizard-title">Langkah 1: Identitas Profil Klien</h3>
-              <p className="wizard-desc">Harap masukkan nama, nomor telepon, dan email aktif Anda untuk menyusun proposal penawaran PLTS resmi.</p>
+              <h3 className="wizard-title">{t('calculator.step1Title')}</h3>
+              <p className="wizard-desc">{t('calculator.step1Desc')}</p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <div className="form-group">
-                  <label>Nama Lengkap / Nama Perusahaan</label>
+                  <label>{t('calculator.clientNameLabel')}</label>
                   <input
                     type="text"
-                    placeholder="Masukkan nama lengkap Anda..."
+                    placeholder={t('calculator.clientNamePlaceholder')}
                     value={clientName}
                     onChange={(e) => setClientName(e.target.value)}
                     required
                   />
                 </div>
                 <div className="form-group">
-                  <label>Nomor Telepon / WhatsApp</label>
+                  <label>{t('calculator.clientPhoneLabel')}</label>
                   <input
                     type="tel"
-                    placeholder="Contoh: 087770051282"
+                    placeholder={t('calculator.clientPhonePlaceholder')}
                     value={clientPhone}
                     onChange={(e) => setClientPhone(e.target.value)}
                     required
                   />
                 </div>
                 <div className="form-group">
-                  <label>Alamat Email</label>
+                  <label>{t('calculator.clientEmailLabel')}</label>
                   <input
                     type="email"
-                    placeholder="Contoh: nama@domain.com"
+                    placeholder={t('calculator.clientEmailPlaceholder')}
                     value={clientEmail}
                     onChange={(e) => setClientEmail(e.target.value)}
                     required
@@ -171,21 +171,21 @@ export default function Calculator() {
           {/* STEP 2: TECHNICAL INPUTS */}
           {step === 2 && (
             <div>
-              <h3 className="wizard-title">Langkah 2: Data Teknis & Konsumsi Listrik</h3>
-              <p className="wizard-desc">Masukkan luas atap bersih dan informasi kelistrikan PLN Anda untuk menghitung kapasitas PLTS yang disarankan.</p>
+              <h3 className="wizard-title">{t('calculator.step2Title')}</h3>
+              <p className="wizard-desc">{t('calculator.step2Desc')}</p>
 
               <div className="form-grid">
                 <div className="form-group" style={{ gridColumn: 'span 2' }}>
-                  <label>Luas Atap yang Tersedia (m²)</label>
+                  <label>{t('calculator.roofAreaLabel')}</label>
                   <input
                     type="number"
                     value={roofArea}
                     onChange={(e) => setRoofArea(Math.max(1, parseInt(e.target.value) || 0))}
                   />
-                  <span style={{ fontSize: '0.8rem', color: '#64748b' }}>Standard luas: 1 kWp panel surya membutuhkan ± 5-6 m² area atap bersih.</span>
+                  <span style={{ fontSize: '0.8rem', color: '#64748b' }}>{t('calculator.roofAreaNote')}</span>
                 </div>
                 <div className="form-group">
-                  <label>Sambungan Kontrak Daya Listrik PLN (VA)</label>
+                  <label>{t('calculator.gridCapacityLabel')}</label>
                   <select value={gridCapacity} onChange={(e) => setGridCapacity(parseInt(e.target.value))}>
                     <option value="1300">1300 VA (1-Phase)</option>
                     <option value="2200">2200 VA (1-Phase)</option>
@@ -200,7 +200,7 @@ export default function Calculator() {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label>Tagihan Listrik Rata-Rata Bulanan (IDR)</label>
+                  <label>{t('calculator.monthlyBillLabel')}</label>
                   <input
                     type="number"
                     step="500000"
@@ -213,15 +213,15 @@ export default function Calculator() {
               {calcResult && (
                 <div className="indicator-grid" style={{ marginTop: '32px' }}>
                   <div className="indicator-box">
-                    <h5>Kebutuhan Ideal</h5>
+                    <h5>{t('calculator.idealKwp')}</h5>
                     <p>{calcResult.targetKwp} <small>kWp</small></p>
                   </div>
                   <div className="indicator-box">
-                    <h5>Batas Maks Atap</h5>
+                    <h5>{t('calculator.maxKwp')}</h5>
                     <p>{calcResult.maxKwpFromRoof} <small>kWp</small></p>
                   </div>
                   <div className="indicator-box highlight">
-                    <h5>Rekomendasi Kapasitas</h5>
+                    <h5>{t('calculator.recKwp')}</h5>
                     <p>{calcResult.recommendedKwp} <small>kWp</small></p>
                   </div>
                 </div>
@@ -232,28 +232,28 @@ export default function Calculator() {
           {/* STEP 3: REPORT & RECOMMENDATIONS */}
           {step === 3 && (
             <div>
-              <h3 className="wizard-title">Langkah 3: Hasil Analisis ROI & Pemeringkatan Produk</h3>
-              <p className="wizard-desc">Analisis ROI telah selesai. Berikut adalah laporan finansial kelayakan PLTS dan rekomendasi produk surya terbaik berdasarkan masukan Anda.</p>
+              <h3 className="wizard-title">{t('calculator.step3Title')}</h3>
+              <p className="wizard-desc">{t('calculator.step3Desc')}</p>
 
               {calcResult && (
                 <div className="indicator-grid">
                   <div className="indicator-box">
-                    <h5>Estimasi Hemat Bulanan</h5>
+                    <h5>{t('calculator.estSavings')}</h5>
                     <p style={{ color: '#0F5A3E' }}>{formatCurrency(calcResult.annualSavings / 12)}</p>
                   </div>
                   <div className="indicator-box">
-                    <h5>Masa Balik Modal</h5>
-                    <p>{getPaybackPeriod()} <small>Tahun</small></p>
+                    <h5>{t('calculator.paybackPeriod')}</h5>
+                    <p>{getPaybackPeriod()} <small>{t('calculator.years')}</small></p>
                   </div>
                   <div className="indicator-box highlight">
-                    <h5>Reduksi CO2 / Tahun</h5>
-                    <p>{calcResult.co2OffsetTons} <small>Ton</small></p>
+                    <h5>{t('calculator.co2Offset')}</h5>
+                    <p>{calcResult.co2OffsetTons} <small>{t('calculator.tons')}</small></p>
                   </div>
                 </div>
               )}
 
               <h4 style={{ fontSize: '1.2rem', fontWeight: '700', marginBottom: '16px', marginTop: '24px', color: '#0F5A3E' }}>
-                Rekomendasi Panel Surya Terpilih untuk Anda
+                {t('calculator.selectedPanels')}
               </h4>
 
               <div className="mcdm-results">
@@ -265,7 +265,7 @@ export default function Calculator() {
                       </div>
                       <div className="item-info">
                         <h4>{p.brand} - {p.model}</h4>
-                        <p>Harga: {formatCurrency(p.price)} | Efisiensi: {p.efficiency}% | Garansi: {p.warranty} Tahun</p>
+                        <p>{t('calculator.price')}: {formatCurrency(p.price)} | {t('calculator.efficiency')}: {p.efficiency}% | {t('calculator.warranty')}: {p.warranty} {t('calculator.years')}</p>
                       </div>
                       <div className="item-score-area">
                         <span className="closeness-pct">{p.closeness}%</span>
@@ -276,7 +276,7 @@ export default function Calculator() {
                     </div>
                   ))
                 ) : (
-                  <p style={{ color: '#64748b' }}>Tidak ada produk yang lolos filtering aturan kecocokan atap.</p>
+                  <p style={{ color: '#64748b' }}>{t('calculator.noProducts')}</p>
                 )}
               </div>
 
@@ -287,7 +287,7 @@ export default function Calculator() {
                   onClick={handlePrint}
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 36px' }}
                 >
-                  <i className="fas fa-file-pdf"></i> Unduh Laporan PDF Resmi
+                  <i className="fas fa-file-pdf"></i> {t('calculator.downloadPdf')}
                 </button>
 
                 {/* Google Form Redirection */}
@@ -301,7 +301,7 @@ export default function Calculator() {
                   textAlign: 'center'
                 }}>
                   <p style={{ fontSize: '0.95rem', color: '#1e293b', marginBottom: '12px', fontWeight: '500' }}>
-                    Ingin survei lokasi fisik secara gratis dan penawaran harga resmi yang disesuaikan dari Tim Engineering ACE?
+                    {t('calculator.consultationText')}
                   </p>
                   <a
                     href={googleFormUrl}
@@ -319,7 +319,7 @@ export default function Calculator() {
                       paddingBottom: '2px'
                     }}
                   >
-                    Klik Selengkapnya Untuk Konsultasi Lebih Lanjut <i className="fas fa-external-link-alt"></i>
+                    {t('calculator.consultationLink')} <i className="fas fa-external-link-alt"></i>
                   </a>
                 </div>
               </div>
@@ -335,11 +335,11 @@ export default function Calculator() {
             onClick={handlePrev}
             style={{ visibility: step === 1 ? 'hidden' : 'visible' }}
           >
-            Kembali
+            {t('calculator.btnBack')}
           </button>
           {step < 3 && (
             <button className="btn-nav next" onClick={handleNext}>
-              Lanjutkan <i className="fas fa-arrow-right" style={{ marginLeft: '6px' }}></i>
+              {t('calculator.btnNext')} <i className="fas fa-arrow-right" style={{ marginLeft: '6px' }}></i>
             </button>
           )}
         </div>
@@ -364,118 +364,118 @@ export default function Calculator() {
             </div>
           </div>
           <div className="print-header-right">
-            <strong>LAPORAN ANALISIS KELAYAKAN PLTS</strong><br />
-            No Dokumen: ACE-ROI-{new Date().getFullYear()}-{Math.floor(1000 + Math.random() * 9000)}<br />
-            Tanggal: {new Date().toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' })}
+            <strong>{t('calculator.pdfTitle')}</strong><br />
+            {t('calculator.pdfDocNo')}: ACE-ROI-{new Date().getFullYear()}-{Math.floor(1000 + Math.random() * 9000)}<br />
+            {t('calculator.pdfDate')}: {new Date().toLocaleDateString(language === 'id' ? 'id-ID' : language === 'ko' ? 'ko-KR' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </div>
         </div>
 
         <h2 style={{ textAlign: 'center', fontSize: '15pt', margin: '20px 0', textTransform: 'uppercase', fontFamily: 'Arial', color: '#0A2B4E' }}>
-          Laporan Teknis Rekomendasi Investasi Energi Surya
+          {t('calculator.pdfSub')}
         </h2>
 
         {/* Client Profile Info Table */}
-        <div className="print-section-title" style={{ color: '#0A2B4E' }}>1. Profil Informasi Klien</div>
+        <div className="print-section-title" style={{ color: '#0A2B4E' }}>{t('calculator.pdfSec1')}</div>
         <table className="print-table" style={{ marginBottom: '24px' }}>
           <tbody>
             <tr>
-              <td style={{ width: '30%', backgroundColor: '#f2f2f2', fontWeight: 'bold' }}>Nama Klien / Perusahaan</td>
+              <td style={{ width: '30%', backgroundColor: '#f2f2f2', fontWeight: 'bold' }}>{t('calculator.pdfClientName')}</td>
               <td><strong>{clientName}</strong></td>
             </tr>
             <tr>
-              <td style={{ backgroundColor: '#f2f2f2', fontWeight: 'bold' }}>Nomor Telepon / WhatsApp</td>
+              <td style={{ backgroundColor: '#f2f2f2', fontWeight: 'bold' }}>{t('calculator.pdfClientPhone')}</td>
               <td><strong>{clientPhone}</strong></td>
             </tr>
             <tr>
-              <td style={{ backgroundColor: '#f2f2f2', fontWeight: 'bold' }}>Alamat Email</td>
+              <td style={{ backgroundColor: '#f2f2f2', fontWeight: 'bold' }}>{t('calculator.pdfClientEmail')}</td>
               <td><strong>{clientEmail}</strong></td>
             </tr>
           </tbody>
         </table>
 
         {/* Section 2: Input Parameters */}
-        <div className="print-section-title" style={{ color: '##0A2B4E' }}>2. Parameter Masukan Teknis</div>
+        <div className="print-section-title" style={{ color: '#0A2B4E' }}>{t('calculator.pdfSec2')}</div>
         <table className="print-table">
           <thead>
             <tr>
-              <th>Parameter Masukan</th>
-              <th>Nilai Input</th>
-              <th>Keterangan</th>
+              <th>{t('calculator.pdfParam')}</th>
+              <th>{t('calculator.pdfVal')}</th>
+              <th>{t('calculator.pdfDesc')}</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Luas Atap yang Tersedia</td>
+              <td>{t('calculator.roofAreaLabel').split(' (')[0]}</td>
               <td><strong>{roofArea} m²</strong></td>
-              <td>Luas fisik yang dialokasikan untuk instalasi panel PV.</td>
+              <td>{t('calculator.pdfRoofAreaDesc')}</td>
             </tr>
             <tr>
-              <td>Sambungan Kontrak Daya Listrik PLN</td>
+              <td>{t('calculator.gridCapacityLabel').split(' (')[0]}</td>
               <td><strong>{gridCapacity} VA</strong></td>
-              <td>Kapasitas jaringan daya listrik aktif di lokasi.</td>
+              <td>{t('calculator.pdfGridDesc')}</td>
             </tr>
             <tr>
-              <td>Rata-rata Tagihan Listrik Bulanan</td>
+              <td>{t('calculator.monthlyBillLabel').split(' (')[0]}</td>
               <td><strong>{formatCurrency(monthlyBill)}</strong></td>
-              <td>Dasar perhitungan kebutuhan energi harian.</td>
+              <td>{t('calculator.pdfBillDesc')}</td>
             </tr>
           </tbody>
         </table>
 
         {/* Section 3: ROI Math */}
-        <div className="print-section-title" style={{ color: '#0A2B4E' }}>3. Hasil Analisis Kapasitas & Evaluasi ROI</div>
+        <div className="print-section-title" style={{ color: '#0A2B4E' }}>{t('calculator.pdfSec3')}</div>
         {calcResult && (
           <table className="print-table">
             <thead>
               <tr>
-                <th>Metrik Evaluasi Sistem</th>
-                <th>Nilai Estimasi</th>
-                <th>Keterangan Teknis</th>
+                <th>{t('calculator.pdfMetric')}</th>
+                <th>{t('calculator.pdfEstVal')}</th>
+                <th>{t('calculator.pdfTechDesc')}</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Rekomendasi Kapasitas Panel Surya</td>
+                <td>{t('calculator.recKwp')}</td>
                 <td><strong>{calcResult.recommendedKwp} kWp</strong></td>
-                <td>Kapasitas optimal yang disesuaikan luas atap & daya PLN.</td>
+                <td>{t('calculator.pdfRecKwpDesc')}</td>
               </tr>
               <tr>
-                <td>Estimasi Produksi Energi Listrik</td>
-                <td><strong>{calcResult.annualGeneration.toLocaleString()} kWh / Tahun</strong></td>
-                <td>Mengacu pada sun hours harian rata-rata di Indonesia.</td>
+                <td>{t('calculator.pdfAnnGen')}</td>
+                <td><strong>{calcResult.annualGeneration.toLocaleString()} {t('calculator.pdfAnnGenUnit')}</strong></td>
+                <td>{t('calculator.pdfAnnGenDesc')}</td>
               </tr>
               <tr>
-                <td>Estimasi Penghematan Finansial</td>
-                <td><strong>{formatCurrency(calcResult.annualSavings)} / Tahun</strong></td>
-                <td>Atau setara dengan {formatCurrency(calcResult.annualSavings / 12)} / Bulan.</td>
+                <td>{t('calculator.pdfAnnSavings')}</td>
+                <td><strong>{formatCurrency(calcResult.annualSavings)} / {t('calculator.years')}</strong></td>
+                <td>{t('calculator.pdfAnnSavingsDesc').replace('{savings}', formatCurrency(calcResult.annualSavings / 12))}</td>
               </tr>
               <tr>
-                <td>Estimasi Waktu Balik Modal (Payback)</td>
-                <td><strong>{getPaybackPeriod()} Tahun</strong></td>
-                <td>Asumsi biaya sistem rata-rata standar ACE.</td>
+                <td>{t('calculator.pdfAnnSavings').replace(t('calculator.pdfAnnSavings').split(' ')[0], t('calculator.paybackPeriod').split(' ')[0])}</td>
+                <td><strong>{getPaybackPeriod()} {t('calculator.years')}</strong></td>
+                <td>{t('calculator.pdfPaybackDesc')}</td>
               </tr>
               <tr>
-                <td>Reduksi Emisi Karbon (CO2 Offset)</td>
-                <td><strong>{calcResult.co2OffsetTons} Ton CO2 / Tahun</strong></td>
-                <td>Sertifikasi hijau kontribusi pelaporan keberlanjutan.</td>
+                <td>{t('calculator.co2Offset')}</td>
+                <td><strong>{calcResult.co2OffsetTons} {t('calculator.tons')} CO₂ / {t('calculator.years')}</strong></td>
+                <td>{t('calculator.pdfCo2Desc')}</td>
               </tr>
             </tbody>
           </table>
         )}
 
         {/* Section 4: Recommendations */}
-        <div className="print-section-title" style={{ color: '#0A2B4E' }}>4. Urutan Rekomendasi Produk Panel Surya Terbaik</div>
+        <div className="print-section-title" style={{ color: '#0A2B4E' }}>{t('calculator.pdfSec4')}</div>
         <p style={{ fontSize: '10pt', marginBottom: '8px', fontStyle: 'italic' }}>
-          Diurutkan secara otomatis berdasarkan prioritas performa, durasi garansi pabrikan, dan nilai ekonomis investasi.
+          {t('calculator.pdfSec4Note')}
         </p>
         <table className="print-table">
           <thead>
             <tr>
-              <th>Peringkat</th>
-              <th>Merek & Model Panel</th>
-              <th>Spesifikasi Teknis</th>
-              <th>Estimasi Harga</th>
-              <th>Tingkat Kecocokan</th>
+              <th>{t('calculator.pdfRank')}</th>
+              <th>{t('calculator.pdfPanelBrand')}</th>
+              <th>{t('calculator.pdfTechSpec')}</th>
+              <th>{t('calculator.pdfEstPrice')}</th>
+              <th>{t('calculator.pdfCloseness')}</th>
             </tr>
           </thead>
           <tbody>
@@ -483,7 +483,7 @@ export default function Calculator() {
               <tr key={p.id}>
                 <td><strong>#{idx + 1}</strong></td>
                 <td>{p.brand} {p.model}</td>
-                <td>Efisiensi: {p.efficiency}% | Garansi: {p.warranty} Tahun | Rating: {p.techRating}</td>
+                <td>{t('calculator.efficiency')}: {p.efficiency}% | {t('calculator.warranty')}: {p.warranty} {t('calculator.years')} | {t('calculator.pdfTechSpec').split(' ')[1] || 'Rating'}: {p.techRating}</td>
                 <td>{formatCurrency(p.price)}</td>
                 <td><strong>{p.closeness}%</strong></td>
               </tr>
@@ -493,23 +493,23 @@ export default function Calculator() {
 
         {/* Note about Consultation Form */}
         <div style={{ marginTop: '24px', fontSize: '9pt', color: '#555', fontStyle: 'italic', borderTop: '1px solid #ccc', paddingTop: '10px' }}>
-          Catatan: Untuk melakukan konsultasi lanjutan dan penjadwalan survei fisik terperinci, silakan hubungi tim teknik melalui tautan kuesioner Google Form berikut: {googleFormUrl}
+          {t('calculator.pdfFormNote').replace('{url}', googleFormUrl)}
         </div>
 
         {/* Signature Box */}
         <div className="signature-area" style={{ marginTop: '40px' }}>
           <div className="sig-block">
-            <p>Dibuat Oleh,</p>
+            <p>{t('calculator.pdfCreatedBy')}</p>
             <strong style={{ color: '#0A2B4E' }}>PT. ACE ENERGY SERVICE</strong>
             <div className="sig-line">
-              Technician Engineer Senior
+              {t('calculator.pdfSeniorTech')}
             </div>
           </div>
           <div className="sig-block">
-            <p>Disetujui Oleh,</p>
-            <strong>Perwakilan Klien / Kemitraan</strong>
+            <p>{t('calculator.pdfApprovedBy')}</p>
+            <strong>{t('calculator.pdfClientRep')}</strong>
             <div className="sig-line">
-              Tanda Tangan & Nama Terang
+              {t('calculator.pdfSigLine')}
             </div>
           </div>
         </div>
