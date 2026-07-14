@@ -30,19 +30,19 @@ export default function Navbar() {
       <div className="container header-container">
         <div className="logo-group">
           <Link to="/" id="logoLink1" onClick={handleLinkClick}>
-            <img 
-              src="/img/Logo-ACEES-PNG-ashif-1536x1122.png" 
-              alt="ACE ENERGY SERVICE" 
-              className="logo-img logo-img-main" 
-              onError={(e) => { e.target.src = 'https://placehold.co/120x40/0A2B4E/white?text=ACE'; }} 
+            <img
+              src="/img/logo.png"
+              alt="ACE ENERGY SERVICE"
+              className="logo-img logo-img-main"
+              onError={(e) => { e.target.src = 'https://placehold.co/120x40/0A2B4E/white?text=ACE'; }}
             />
           </Link>
           <Link to="/" id="logoLink2" onClick={handleLinkClick}>
-            <img 
-              src="/img/logoace.png" 
-              alt="ACE ENERGY SERVICE" 
-              className="logo-img logo-img-secondary" 
-              onError={(e) => { e.target.src = 'https://placehold.co/120x40/0A2B4E/white?text=ACE'; }} 
+            <img
+              src="/img/logoace.png"
+              alt="ACE ENERGY SERVICE"
+              className="logo-img logo-img-secondary"
+              onError={(e) => { e.target.src = 'https://placehold.co/120x40/0A2B4E/white?text=ACE'; }}
             />
           </Link>
         </div>
@@ -65,28 +65,28 @@ export default function Navbar() {
 
         <div className="header-actions">
           <div className="lang-switcher">
-            <button 
-              className={`lang-btn ${language === 'en' ? 'active' : ''}`} 
+            <button
+              className={`lang-btn ${language === 'en' ? 'active' : ''}`}
               onClick={() => setLanguage('en')}
             >
               EN
             </button>
-            <button 
-              className={`lang-btn ${language === 'id' ? 'active' : ''}`} 
+            <button
+              className={`lang-btn ${language === 'id' ? 'active' : ''}`}
               onClick={() => setLanguage('id')}
             >
               ID
             </button>
-            <button 
-              className={`lang-btn ${language === 'ko' ? 'active' : ''}`} 
+            <button
+              className={`lang-btn ${language === 'ko' ? 'active' : ''}`}
               onClick={() => setLanguage('ko')}
             >
               KO
             </button>
           </div>
-          <button 
-            className={`menu-toggle ${menuOpen ? 'active' : ''}`} 
-            id="menuToggle" 
+          <button
+            className={`menu-toggle ${menuOpen ? 'active' : ''}`}
+            id="menuToggle"
             aria-label="Toggle menu"
             onClick={() => setMenuOpen(!menuOpen)}
           >
