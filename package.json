@@ -9,7 +9,9 @@
     "build:two": "cd ace-new-two && npm run build",
     "dev:three": "cd ace-new-three && npm run dev",
     "build:three": "cd ace-new-three && npm run build",
-    "dev": "cd ace-new-three && npm run dev",
-    "build": "cd ace-new-three && npm run build"
+    "dev:calc": "cd solar-roi-calculator && npm run dev",
+    "build:calc": "cd solar-roi-calculator && npm run build",
+    "dev": "cd solar-roi-calculator && npm run dev",
+    "build": "cd solar-roi-calculator && npm run build"
   }
 }
