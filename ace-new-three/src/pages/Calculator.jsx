@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { 
-  products, 
-  calculateCapacity, 
-  validateRoofConstraints, 
-  filterProducts, 
-  rankProductsTopsis 
+import {
+  products,
+  calculateCapacity,
+  validateRoofConstraints,
+  filterProducts,
+  rankProductsTopsis
 } from '../utils/calcEngine';
 import './Calculator.css';
 
@@ -14,7 +14,7 @@ export default function Calculator() {
 
   // Wizard Step State (Total 3 Steps)
   const [step, setStep] = useState(1);
-  
+
   // Step 1: Client profile info
   const [clientName, setClientName] = useState('');
   const [clientPhone, setClientPhone] = useState('');
@@ -104,10 +104,10 @@ export default function Calculator() {
 
   return (
     <div className="calc-container">
-      
+
       {/* SCREEN UI (Hidden on Print) */}
       <div className="no-print">
-        
+
         {/* STEPPER PROGRESS */}
         <div className="stepper-progress">
           <div className={getStepClass(1)}>
@@ -126,40 +126,40 @@ export default function Calculator() {
 
         {/* WIZARD CARD CONTAINER */}
         <div className="wizard-card">
-          
+
           {/* STEP 1: CLIENT IDENTITY */}
           {step === 1 && (
             <div>
               <h3 className="wizard-title">Langkah 1: Identitas Profil Klien</h3>
               <p className="wizard-desc">Harap masukkan nama, nomor telepon, dan email aktif Anda untuk menyusun proposal penawaran PLTS resmi.</p>
-              
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <div className="form-group">
                   <label>Nama Lengkap / Nama Perusahaan</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     placeholder="Masukkan nama lengkap Anda..."
-                    value={clientName} 
+                    value={clientName}
                     onChange={(e) => setClientName(e.target.value)}
                     required
                   />
                 </div>
                 <div className="form-group">
                   <label>Nomor Telepon / WhatsApp</label>
-                  <input 
-                    type="tel" 
+                  <input
+                    type="tel"
                     placeholder="Contoh: 087770051282"
-                    value={clientPhone} 
+                    value={clientPhone}
                     onChange={(e) => setClientPhone(e.target.value)}
                     required
                   />
                 </div>
                 <div className="form-group">
                   <label>Alamat Email</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     placeholder="Contoh: nama@domain.com"
-                    value={clientEmail} 
+                    value={clientEmail}
                     onChange={(e) => setClientEmail(e.target.value)}
                     required
                   />
@@ -173,16 +173,16 @@ export default function Calculator() {
             <div>
               <h3 className="wizard-title">Langkah 2: Data Teknis & Konsumsi Listrik</h3>
               <p className="wizard-desc">Masukkan luas atap bersih dan informasi kelistrikan PLN Anda untuk menghitung kapasitas PLTS yang disarankan.</p>
-              
+
               <div className="form-grid">
                 <div className="form-group" style={{ gridColumn: 'span 2' }}>
                   <label>Luas Atap yang Tersedia (m²)</label>
-                  <input 
-                    type="number" 
-                    value={roofArea} 
+                  <input
+                    type="number"
+                    value={roofArea}
                     onChange={(e) => setRoofArea(Math.max(1, parseInt(e.target.value) || 0))}
                   />
-                  <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Standard luas: 1 kWp panel surya membutuhkan ± 5-6 m² area atap bersih.</span>
+                  <span style={{ fontSize: '0.8rem', color: '#64748b' }}>Standard luas: 1 kWp panel surya membutuhkan ± 5-6 m² area atap bersih.</span>
                 </div>
                 <div className="form-group">
                   <label>Sambungan Kontrak Daya Listrik PLN (VA)</label>
@@ -201,10 +201,10 @@ export default function Calculator() {
                 </div>
                 <div className="form-group">
                   <label>Tagihan Listrik Rata-Rata Bulanan (IDR)</label>
-                  <input 
-                    type="number" 
+                  <input
+                    type="number"
                     step="500000"
-                    value={monthlyBill} 
+                    value={monthlyBill}
                     onChange={(e) => setMonthlyBill(Math.max(500000, parseInt(e.target.value) || 0))}
                   />
                 </div>
@@ -234,12 +234,12 @@ export default function Calculator() {
             <div>
               <h3 className="wizard-title">Langkah 3: Hasil Analisis ROI & Pemeringkatan Produk</h3>
               <p className="wizard-desc">Analisis ROI telah selesai. Berikut adalah laporan finansial kelayakan PLTS dan rekomendasi produk surya terbaik berdasarkan masukan Anda.</p>
-              
+
               {calcResult && (
                 <div className="indicator-grid">
                   <div className="indicator-box">
                     <h5>Estimasi Hemat Bulanan</h5>
-                    <p style={{ color: '#10b981' }}>{formatCurrency(calcResult.annualSavings / 12)}</p>
+                    <p style={{ color: '#0F5A3E' }}>{formatCurrency(calcResult.annualSavings / 12)}</p>
                   </div>
                   <div className="indicator-box">
                     <h5>Masa Balik Modal</h5>
@@ -252,10 +252,10 @@ export default function Calculator() {
                 </div>
               )}
 
-              <h4 style={{ fontSize: '1.2rem', fontWeight: '700', marginBottom: '16px', marginTop: '24px', color: '#fff' }}>
+              <h4 style={{ fontSize: '1.2rem', fontWeight: '700', marginBottom: '16px', marginTop: '24px', color: '#0F5A3E' }}>
                 Rekomendasi Panel Surya Terpilih untuk Anda
               </h4>
-              
+
               <div className="mcdm-results">
                 {rankedProducts.length > 0 ? (
                   rankedProducts.map((p, idx) => (
@@ -276,13 +276,13 @@ export default function Calculator() {
                     </div>
                   ))
                 ) : (
-                  <p style={{ color: '#94a3b8' }}>Tidak ada produk yang lolos filtering aturan kecocokan atap.</p>
+                  <p style={{ color: '#64748b' }}>Tidak ada produk yang lolos filtering aturan kecocokan atap.</p>
                 )}
               </div>
 
               {/* Action Buttons */}
               <div style={{ marginTop: '36px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-                <button 
+                <button
                   className="btn-nav next"
                   onClick={handlePrint}
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 36px' }}
@@ -291,31 +291,31 @@ export default function Calculator() {
                 </button>
 
                 {/* Google Form Redirection */}
-                <div style={{ 
-                  marginTop: '20px', 
-                  padding: '24px', 
-                  borderRadius: '16px', 
-                  background: 'rgba(245, 158, 11, 0.05)', 
-                  border: '1px solid rgba(245, 158, 11, 0.15)',
+                <div style={{
+                  marginTop: '20px',
+                  padding: '24px',
+                  borderRadius: '16px',
+                  background: '#f0fbf7',
+                  border: '1px solid #a7f3d0',
                   width: '100%',
                   textAlign: 'center'
                 }}>
-                  <p style={{ fontSize: '0.95rem', color: '#e2e8f0', marginBottom: '12px', fontWeight: '500' }}>
+                  <p style={{ fontSize: '0.95rem', color: '#1e293b', marginBottom: '12px', fontWeight: '500' }}>
                     Ingin survei lokasi fisik secara gratis dan penawaran harga resmi yang disesuaikan dari Tim Engineering ACE?
                   </p>
-                  <a 
-                    href={googleFormUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    style={{ 
-                      display: 'inline-flex', 
-                      alignItems: 'center', 
-                      gap: '8px', 
-                      color: '#f59e0b', 
-                      textDecoration: 'none', 
-                      fontWeight: '700', 
+                  <a
+                    href={googleFormUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      color: '#0F5A3E',
+                      textDecoration: 'none',
+                      fontWeight: '700',
                       fontSize: '1rem',
-                      borderBottom: '2px solid #f59e0b',
+                      borderBottom: '2px solid #0F5A3E',
                       paddingBottom: '2px'
                     }}
                   >
@@ -330,8 +330,8 @@ export default function Calculator() {
 
         {/* WIZARD NAVIGATION CONTROLS */}
         <div className="wizard-actions">
-          <button 
-            className="btn-nav prev" 
+          <button
+            className="btn-nav prev"
             onClick={handlePrev}
             style={{ visibility: step === 1 ? 'hidden' : 'visible' }}
           >
@@ -348,18 +348,18 @@ export default function Calculator() {
 
       {/* PRINT-ONLY LAYOUT (Visible only during PDF print generation) */}
       <div className="print-only print-container">
-        
+
         {/* Letterhead */}
         <div className="print-header">
           <div className="print-header-left">
-            <img 
-              src="/img/logoace.png" 
-              alt="ACE Energy Logo" 
-              className="print-logo" 
+            <img
+              src="/img/logoace.png"
+              alt="ACE Energy Logo"
+              className="print-logo"
               onError={(e) => { e.target.src = 'https://placehold.co/120x40/0A2B4E/white?text=ACE'; }}
             />
             <div className="print-header-title" style={{ marginLeft: '12px' }}>
-              <h1 style={{ color: '#000', fontFamily: 'Arial' }}>PT. ACE ENERGY SERVICE</h1>
+              <h1 style={{ color: '#0A2B4E', fontFamily: 'Arial' }}>PT. ACE ENERGY SERVICE</h1>
               <p style={{ fontSize: '8pt', color: '#555' }}>Green Infrastructure & Solar PV EPC Leader · ISO 9001, 14001, 45001 Certified</p>
             </div>
           </div>
@@ -370,12 +370,12 @@ export default function Calculator() {
           </div>
         </div>
 
-        <h2 style={{ textAlign: 'center', fontSize: '15pt', margin: '20px 0', textTransform: 'uppercase', fontFamily: 'Arial', color: '#000' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '15pt', margin: '20px 0', textTransform: 'uppercase', fontFamily: 'Arial', color: '#0A2B4E' }}>
           Laporan Teknis Rekomendasi Investasi Energi Surya
         </h2>
 
         {/* Client Profile Info Table */}
-        <div className="print-section-title">1. Profil Informasi Klien</div>
+        <div className="print-section-title" style={{ color: '#0A2B4E' }}>1. Profil Informasi Klien</div>
         <table className="print-table" style={{ marginBottom: '24px' }}>
           <tbody>
             <tr>
@@ -394,7 +394,7 @@ export default function Calculator() {
         </table>
 
         {/* Section 2: Input Parameters */}
-        <div className="print-section-title">2. Parameter Masukan Teknis</div>
+        <div className="print-section-title" style={{ color: '##0A2B4E' }}>2. Parameter Masukan Teknis</div>
         <table className="print-table">
           <thead>
             <tr>
@@ -423,7 +423,7 @@ export default function Calculator() {
         </table>
 
         {/* Section 3: ROI Math */}
-        <div className="print-section-title">3. Hasil Analisis Kapasitas & Evaluasi ROI</div>
+        <div className="print-section-title" style={{ color: '#0A2B4E' }}>3. Hasil Analisis Kapasitas & Evaluasi ROI</div>
         {calcResult && (
           <table className="print-table">
             <thead>
@@ -464,7 +464,7 @@ export default function Calculator() {
         )}
 
         {/* Section 4: Recommendations */}
-        <div className="print-section-title">4. Urutan Rekomendasi Produk Panel Surya Terbaik</div>
+        <div className="print-section-title" style={{ color: '#0A2B4E' }}>4. Urutan Rekomendasi Produk Panel Surya Terbaik</div>
         <p style={{ fontSize: '10pt', marginBottom: '8px', fontStyle: 'italic' }}>
           Diurutkan secara otomatis berdasarkan prioritas performa, durasi garansi pabrikan, dan nilai ekonomis investasi.
         </p>
@@ -500,7 +500,7 @@ export default function Calculator() {
         <div className="signature-area" style={{ marginTop: '40px' }}>
           <div className="sig-block">
             <p>Dibuat Oleh,</p>
-            <strong>PT. ACE ENERGY SERVICE</strong>
+            <strong style={{ color: '#0A2B4E' }}>PT. ACE ENERGY SERVICE</strong>
             <div className="sig-line">
               Technician Engineer Senior
             </div>

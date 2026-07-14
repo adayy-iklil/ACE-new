@@ -12,6 +12,7 @@ export default function Navbar() {
     { path: '/about', labelKey: 'nav_about' },
     { path: '/strength', labelKey: 'nav_strength' },
     { path: '/services', labelKey: 'nav_services' },
+    { path: '/calculator', labelKey: 'nav_calculator' },
     { path: '/projects', labelKey: 'nav_projects' },
     { path: '/contact', labelKey: 'nav_contact' },
   ];

@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  products, 
-  calculateCapacity, 
-  validateRoofConstraints, 
-  filterProducts, 
-  rankProductsTopsis 
+import {
+  products,
+  calculateCapacity,
+  validateRoofConstraints,
+  filterProducts,
+  rankProductsTopsis
 } from './utils/calcEngine';
 
 export default function App() {
   // Wizard Step State (Total 3 Steps)
   const [step, setStep] = useState(1);
-  
+
   // Step 1: Client profile info
   const [clientName, setClientName] = useState('');
   const [clientPhone, setClientPhone] = useState('');
@@ -100,21 +100,18 @@ export default function App() {
 
   return (
     <div className="container" style={{ marginTop: '20px' }}>
-      
+
       {/* SCREEN UI (Hidden on Print) */}
       <div className="no-print">
-        
+
         {/* APP HEADER */}
         <header className="app-header">
           <div className="header-title-area">
-            <i className="fas fa-solar-panel logo-icon"></i>
-            <div>
-              <h1>ACE ENERGY <span>Calculator</span></h1>
-              <span className="tagline">Solar ROI & Product Recommendations Wizard</span>
-            </div>
+            <img src="../img/logoE.png" alt="" />
+            <img src="../img/logoace.png" alt="" />
           </div>
           <div style={{ textAlign: 'right' }}>
-            <span style={{ fontSize: '0.85rem', color: '#10b981', fontWeight: '700' }}>ACE ENERGY SERVICE</span>
+            <span style={{ fontSize: '0.85rem', color: '#10b981', fontWeight: '700' }}>Calculator Simulasi</span>
           </div>
         </header>
 
@@ -136,40 +133,40 @@ export default function App() {
 
         {/* WIZARD CARD CONTAINER */}
         <div className="wizard-card">
-          
+
           {/* STEP 1: CLIENT IDENTITY */}
           {step === 1 && (
             <div>
               <h3 className="wizard-title">Langkah 1: Identitas Profil Klien</h3>
               <p className="wizard-desc">Harap masukkan nama, nomor telepon, dan email aktif Anda untuk menyusun proposal penawaran PLTS resmi.</p>
-              
+
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <div className="form-group">
                   <label>Nama Lengkap / Nama Perusahaan</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     placeholder="Masukkan nama lengkap Anda..."
-                    value={clientName} 
+                    value={clientName}
                     onChange={(e) => setClientName(e.target.value)}
                     required
                   />
                 </div>
                 <div className="form-group">
                   <label>Nomor Telepon / WhatsApp</label>
-                  <input 
-                    type="tel" 
+                  <input
+                    type="tel"
                     placeholder="Contoh: 087770051282"
-                    value={clientPhone} 
+                    value={clientPhone}
                     onChange={(e) => setClientPhone(e.target.value)}
                     required
                   />
                 </div>
                 <div className="form-group">
                   <label>Alamat Email</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     placeholder="Contoh: nama@domain.com"
-                    value={clientEmail} 
+                    value={clientEmail}
                     onChange={(e) => setClientEmail(e.target.value)}
                     required
                   />
@@ -183,13 +180,13 @@ export default function App() {
             <div>
               <h3 className="wizard-title">Langkah 2: Data Teknis & Konsumsi Listrik</h3>
               <p className="wizard-desc">Masukkan luas atap bersih dan informasi kelistrikan PLN Anda untuk menghitung kapasitas PLTS yang disarankan.</p>
-              
+
               <div className="form-grid">
                 <div className="form-group" style={{ gridColumn: 'span 2' }}>
                   <label>Luas Atap yang Tersedia (m²)</label>
-                  <input 
-                    type="number" 
-                    value={roofArea} 
+                  <input
+                    type="number"
+                    value={roofArea}
                     onChange={(e) => setRoofArea(Math.max(1, parseInt(e.target.value) || 0))}
                   />
                   <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Standard luas: 1 kWp panel surya membutuhkan ± 5-6 m² area atap bersih.</span>
@@ -211,10 +208,10 @@ export default function App() {
                 </div>
                 <div className="form-group">
                   <label>Tagihan Listrik Rata-Rata Bulanan (IDR)</label>
-                  <input 
-                    type="number" 
+                  <input
+                    type="number"
                     step="500000"
-                    value={monthlyBill} 
+                    value={monthlyBill}
                     onChange={(e) => setMonthlyBill(Math.max(500000, parseInt(e.target.value) || 0))}
                   />
                 </div>
@@ -244,7 +241,7 @@ export default function App() {
             <div>
               <h3 className="wizard-title">Langkah 3: Hasil Analisis ROI & Pemeringkatan Produk</h3>
               <p className="wizard-desc">Analisis ROI telah selesai. Berikut adalah laporan finansial kelayakan PLTS dan rekomendasi produk surya terbaik berdasarkan masukan Anda.</p>
-              
+
               {calcResult && (
                 <div className="indicator-grid">
                   <div className="indicator-box">
@@ -263,9 +260,9 @@ export default function App() {
               )}
 
               <h4 style={{ fontSize: '1.2rem', fontWeight: '700', marginBottom: '16px', marginTop: '12px' }}>
-                Rekomendasi Produk Surya Teroptimasi (TOPSIS Method)
+                Rekomendasi Panel Surya Terpilih untuk Anda
               </h4>
-              
+
               <div className="mcdm-results">
                 {rankedProducts.length > 0 ? (
                   rankedProducts.map((p, idx) => (
@@ -292,7 +289,7 @@ export default function App() {
 
               {/* Action Buttons */}
               <div style={{ marginTop: '36px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-                <button 
+                <button
                   className="btn-nav next"
                   onClick={handlePrint}
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '14px 36px' }}
@@ -301,11 +298,11 @@ export default function App() {
                 </button>
 
                 {/* Google Form Redirection */}
-                <div style={{ 
-                  marginTop: '20px', 
-                  padding: '24px', 
-                  borderRadius: '16px', 
-                  background: 'rgba(245, 158, 11, 0.05)', 
+                <div style={{
+                  marginTop: '20px',
+                  padding: '24px',
+                  borderRadius: '16px',
+                  background: 'rgba(245, 158, 11, 0.05)',
                   border: '1px solid rgba(245, 158, 11, 0.15)',
                   width: '100%',
                   textAlign: 'center'
@@ -313,17 +310,17 @@ export default function App() {
                   <p style={{ fontSize: '0.95rem', color: '#e2e8f0', marginBottom: '12px', fontWeight: '500' }}>
                     Ingin survei lokasi fisik secara gratis dan penawaran harga resmi yang disesuaikan dari Tim Engineering ACE?
                   </p>
-                  <a 
-                    href={googleFormUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    style={{ 
-                      display: 'inline-flex', 
-                      alignItems: 'center', 
-                      gap: '8px', 
-                      color: '#f59e0b', 
-                      textDecoration: 'none', 
-                      fontWeight: '700', 
+                  <a
+                    href={googleFormUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      color: '#f59e0b',
+                      textDecoration: 'none',
+                      fontWeight: '700',
                       fontSize: '1rem',
                       borderBottom: '2px solid #f59e0b',
                       paddingBottom: '2px'
@@ -340,8 +337,8 @@ export default function App() {
 
         {/* WIZARD NAVIGATION CONTROLS */}
         <div className="wizard-actions">
-          <button 
-            className="btn-nav prev" 
+          <button
+            className="btn-nav prev"
             onClick={handlePrev}
             style={{ visibility: step === 1 ? 'hidden' : 'visible' }}
           >
@@ -358,14 +355,14 @@ export default function App() {
 
       {/* PRINT-ONLY LAYOUT (Visible only during PDF print generation) */}
       <div className="print-only print-container">
-        
+
         {/* Letterhead */}
         <div className="print-header">
           <div className="print-header-left">
-            <img 
-              src="/img/Logo-ACEES-PNG-ashif-1536x1122.png" 
-              alt="ACE Energy Logo" 
-              className="print-logo" 
+            <img
+              src="../img/logoE.png"
+              alt="ACE Energy Logo"
+              className="print-logo"
             />
             <div className="print-header-title">
               <h1>PT. ACE ENERGY SERVICE</h1>
@@ -472,10 +469,10 @@ export default function App() {
           </table>
         )}
 
-        {/* Section 4: MCDM Recommendations */}
-        <div className="print-section-title">4. Urutan Peringkat Produk Terkompatibilitas (MCDM TOPSIS)</div>
+        {/* Section 4: Recommendations */}
+        <div className="print-section-title">4. Urutan Rekomendasi Produk Panel Surya Terbaik</div>
         <p style={{ fontSize: '10pt', marginBottom: '8px', fontStyle: 'italic' }}>
-          Pembobotan kriteria: Harga ({wPrice}%), Efisiensi ({wEfficiency}%), Garansi ({wWarranty}%), Kualitas Teknis ({wTechRating}%).
+          Diurutkan secara otomatis berdasarkan prioritas performa, durasi garansi pabrikan, dan nilai ekonomis investasi.
         </p>
         <table className="print-table">
           <thead>
@@ -484,7 +481,7 @@ export default function App() {
               <th>Merek & Model Panel</th>
               <th>Spesifikasi Teknis</th>
               <th>Estimasi Harga</th>
-              <th>Skor TOPSIS</th>
+              <th>Tingkat Kecocokan</th>
             </tr>
           </thead>
           <tbody>

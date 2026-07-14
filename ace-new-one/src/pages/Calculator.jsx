@@ -182,7 +182,7 @@ export default function Calculator() {
                     value={roofArea} 
                     onChange={(e) => setRoofArea(Math.max(1, parseInt(e.target.value) || 0))}
                   />
-                  <span style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Standard luas: 1 kWp panel surya membutuhkan ± 5-6 m² area atap bersih.</span>
+                  <span style={{ fontSize: '0.8rem', color: '#64748b' }}>Standard luas: 1 kWp panel surya membutuhkan ± 5-6 m² area atap bersih.</span>
                 </div>
                 <div className="form-group">
                   <label>Sambungan Kontrak Daya Listrik PLN (VA)</label>
@@ -239,7 +239,7 @@ export default function Calculator() {
                 <div className="indicator-grid">
                   <div className="indicator-box">
                     <h5>Estimasi Hemat Bulanan</h5>
-                    <p style={{ color: '#10b981' }}>{formatCurrency(calcResult.annualSavings / 12)}</p>
+                    <p style={{ color: '#0A2B4E' }}>{formatCurrency(calcResult.annualSavings / 12)}</p>
                   </div>
                   <div className="indicator-box">
                     <h5>Masa Balik Modal</h5>
@@ -252,7 +252,7 @@ export default function Calculator() {
                 </div>
               )}
 
-              <h4 style={{ fontSize: '1.2rem', fontWeight: '700', marginBottom: '16px', marginTop: '24px', color: '#fff' }}>
+              <h4 style={{ fontSize: '1.2rem', fontWeight: '700', marginBottom: '16px', marginTop: '24px', color: '#0A2B4E' }}>
                 Rekomendasi Panel Surya Terpilih untuk Anda
               </h4>
               
@@ -276,7 +276,7 @@ export default function Calculator() {
                     </div>
                   ))
                 ) : (
-                  <p style={{ color: '#94a3b8' }}>Tidak ada produk yang lolos filtering aturan kecocokan atap.</p>
+                  <p style={{ color: '#64748b' }}>Tidak ada produk yang lolos filtering aturan kecocokan atap.</p>
                 )}
               </div>
 
@@ -295,12 +295,12 @@ export default function Calculator() {
                   marginTop: '20px', 
                   padding: '24px', 
                   borderRadius: '16px', 
-                  background: 'rgba(245, 158, 11, 0.05)', 
-                  border: '1px solid rgba(245, 158, 11, 0.15)',
+                  background: '#fffdf5', 
+                  border: '1px solid #e9d5ff',
                   width: '100%',
                   textAlign: 'center'
                 }}>
-                  <p style={{ fontSize: '0.95rem', color: '#e2e8f0', marginBottom: '12px', fontWeight: '500' }}>
+                  <p style={{ fontSize: '0.95rem', color: '#1e293b', marginBottom: '12px', fontWeight: '500' }}>
                     Ingin survei lokasi fisik secara gratis dan penawaran harga resmi yang disesuaikan dari Tim Engineering ACE?
                   </p>
                   <a 
@@ -311,11 +311,11 @@ export default function Calculator() {
                       display: 'inline-flex', 
                       alignItems: 'center', 
                       gap: '8px', 
-                      color: '#f59e0b', 
+                      color: '#D4AF37', 
                       textDecoration: 'none', 
                       fontWeight: '700', 
                       fontSize: '1rem',
-                      borderBottom: '2px solid #f59e0b',
+                      borderBottom: '2px solid #D4AF37',
                       paddingBottom: '2px'
                     }}
                   >
@@ -359,7 +359,7 @@ export default function Calculator() {
               onError={(e) => { e.target.src = 'https://placehold.co/120x40/0A2B4E/white?text=ACE'; }}
             />
             <div className="print-header-title" style={{ marginLeft: '12px' }}>
-              <h1 style={{ color: '#000', fontFamily: 'Arial' }}>PT. ACE ENERGY SERVICE</h1>
+              <h1 style={{ color: '#0A2B4E', fontFamily: 'Arial' }}>PT. ACE ENERGY SERVICE</h1>
               <p style={{ fontSize: '8pt', color: '#555' }}>Green Infrastructure & Solar PV EPC Leader · ISO 9001, 14001, 45001 Certified</p>
             </div>
           </div>
@@ -370,12 +370,12 @@ export default function Calculator() {
           </div>
         </div>
 
-        <h2 style={{ textAlign: 'center', fontSize: '15pt', margin: '20px 0', textTransform: 'uppercase', fontFamily: 'Arial', color: '#000' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '15pt', margin: '20px 0', textTransform: 'uppercase', fontFamily: 'Arial', color: '#0A2B4E' }}>
           Laporan Teknis Rekomendasi Investasi Energi Surya
         </h2>
 
         {/* Client Profile Info Table */}
-        <div className="print-section-title">1. Profil Informasi Klien</div>
+        <div className="print-section-title" style={{ color: '#0A2B4E' }}>1. Profil Informasi Klien</div>
         <table className="print-table" style={{ marginBottom: '24px' }}>
           <tbody>
             <tr>
@@ -394,7 +394,7 @@ export default function Calculator() {
         </table>
 
         {/* Section 2: Input Parameters */}
-        <div className="print-section-title">2. Parameter Masukan Teknis</div>
+        <div className="print-section-title" style={{ color: '#0A2B4E' }}>2. Parameter Masukan Teknis</div>
         <table className="print-table">
           <thead>
             <tr>
@@ -423,7 +423,7 @@ export default function Calculator() {
         </table>
 
         {/* Section 3: ROI Math */}
-        <div className="print-section-title">3. Hasil Analisis Kapasitas & Evaluasi ROI</div>
+        <div className="print-section-title" style={{ color: '#0A2B4E' }}>3. Hasil Analisis Kapasitas & Evaluasi ROI</div>
         {calcResult && (
           <table className="print-table">
             <thead>
@@ -464,7 +464,7 @@ export default function Calculator() {
         )}
 
         {/* Section 4: Recommendations */}
-        <div className="print-section-title">4. Urutan Rekomendasi Produk Panel Surya Terbaik</div>
+        <div className="print-section-title" style={{ color: '#0A2B4E' }}>4. Urutan Rekomendasi Produk Panel Surya Terbaik</div>
         <p style={{ fontSize: '10pt', marginBottom: '8px', fontStyle: 'italic' }}>
           Diurutkan secara otomatis berdasarkan prioritas performa, durasi garansi pabrikan, dan nilai ekonomis investasi.
         </p>
@@ -500,7 +500,7 @@ export default function Calculator() {
         <div className="signature-area" style={{ marginTop: '40px' }}>
           <div className="sig-block">
             <p>Dibuat Oleh,</p>
-            <strong>PT. ACE ENERGY SERVICE</strong>
+            <strong style={{ color: '#0A2B4E' }}>PT. ACE ENERGY SERVICE</strong>
             <div className="sig-line">
               Technician Engineer Senior
             </div>

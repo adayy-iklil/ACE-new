@@ -20,6 +20,7 @@ export default function Navbar() {
     { path: '/', labelKey: 'nav.home' },
     { path: '/about', labelKey: 'nav.about' },
     { path: '/services', labelKey: 'nav.services' },
+    { path: '/calculator', labelKey: 'nav.calculator' },
     { path: '/projects', labelKey: 'nav.projects' },
     { path: '/contact', labelKey: 'nav.contact' },
   ];

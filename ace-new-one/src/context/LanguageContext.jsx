@@ -3,7 +3,7 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 const translations = {
   en: {
     // Navigation
-    nav_home: "Home", nav_about: "About", nav_strength: "Strengths", nav_services: "Services", nav_projects: "Projects", nav_contact: "Contact",
+    nav_home: "Home", nav_about: "About", nav_strength: "Strengths", nav_services: "Services", nav_projects: "Projects", nav_contact: "Contact", nav_calculator: "Calculator",
     // Hero
     hero_badge: "Indonesia's No.1 Solar EPC & O&M", hero_title: "Empowering the Future with <span class='gold-text'>Clean Energy</span>", hero_desc: "Premium solar solutions — EPC, O&M, and renewable innovation for industries, commercial, residential, and agriculture.", hero_btn1: "Learn More", hero_btn2: "Contact Us",
     // About
@@ -47,7 +47,7 @@ const translations = {
     modal_capacity: "Capacity:", modal_button: "Contact Us"
   },
   id: {
-    nav_home: "Beranda", nav_about: "Tentang", nav_strength: "Keunggulan", nav_services: "Layanan", nav_projects: "Proyek", nav_contact: "Kontak",
+    nav_home: "Beranda", nav_about: "Tentang", nav_strength: "Keunggulan", nav_services: "Layanan", nav_projects: "Proyek", nav_contact: "Kontak", nav_calculator: "Kalkulator",
     hero_badge: "No.1 EPC & O&M Tenaga Surya di Indonesia", hero_title: "Memberdayakan Masa Depan dengan <span class='gold-text'>Energi Bersih</span>", hero_desc: "Solusi tenaga surya premium — EPC, O&M, dan inovasi terbarukan untuk industri, komersial, perumahan, dan pertanian.", hero_btn1: "Pelajari Lebih", hero_btn2: "Hubungi Kami",
     about_tag: "Tentang Kami", about_title: "Mitra Terpercaya Anda dalam Energi Surya", about_desc: "PT. ACE ENERGY SERVICE (afiliasi dengan ACE E&C, pemimpin konstruksi berlisensi B2 dengan pengalaman 30+ tahun) memberikan solusi PLTS kelas dunia di seluruh Indonesia. Sejak 2019, kami berspesialisasi dalam EPC, O&M, dan layanan terbarukan yang inovatif.", about_stat1: "300+ Proyek Grup", about_stat2: "Bersertifikat ISO & B2", about_stat3: "Portofolio Nasional", about_stat4: "Penjualan IDR 1,2T (2023)",
     counter1: "Tahun Keunggulan", counter2: "Proyek Utama", counter3: "Kapasitas Terpasang", counter4: "Klien Korporat",
@@ -84,7 +84,7 @@ const translations = {
     modal_capacity: "Kapasitas:", modal_button: "Hubungi Kami"
   },
   ko: {
-    nav_home: "홈", nav_about: "회사소개", nav_strength: "강점", nav_services: "서비스", nav_projects: "프로젝트", nav_contact: "연락처",
+    nav_home: "홈", nav_about: "회사소개", nav_strength: "강점", nav_services: "서비스", nav_projects: "프로젝트", nav_contact: "연락처", nav_calculator: "계산기",
     hero_badge: "인도네시아 No.1 태양광 EPC 및 O&M", hero_title: "미래를 깨끗한 에너지로 <span class='gold-text'>활성화</span>", hero_desc: "프리미엄 태양광 솔루션 — EPC, O&M 및 산업, 상업, 주거, 농업을 위한 재생 혁신.", hero_btn1: "더 알아보기", hero_btn2: "문의하기",
     about_tag: "회사소개", about_title: "태양광 분야의 신뢰받는 파트너", about_desc: "PT. ACE ENERGY SERVICE(30년 이상 경력의 B2 등급 건설 리더 ACE E&C 계열사)는 인도네시아 전역에 세계적 수준의 태양광 PV 솔루션을 제공합니다. 2019년부터 EPC, O&M 및 혁신적인 재생 서비스를 전문으로 합니다.", about_stat1: "300+ 그룹 프로젝트", about_stat2: "ISO 및 B2 인증", about_stat3: "전국 포트폴리오", about_stat4: "IDR 1.2T 매출(2023년)",
     counter1: "우수성의 해", counter2: "주요 프로젝트", counter3: "설치 용량", counter4: "법인 고객",
