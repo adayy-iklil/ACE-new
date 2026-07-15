@@ -145,7 +145,7 @@ export default function Home() {
             </div>
             <div className="stat-item">
               <div>
-                <StatCounter target="800" />
+                <StatCounter target="10" />
               </div>
               <span className="stat-label">{t('stats.revenue')}</span>
             </div>
