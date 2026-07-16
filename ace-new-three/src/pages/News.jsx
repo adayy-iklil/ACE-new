@@ -18,7 +18,7 @@ export default function News() {
         title: 'Partnering with Ace Energy, Anwar Hafid Brings Solar Power to Central Sulawesi',
         excerpt: 'The Governor of Central Sulawesi, Anwar Hafid, has established a collaborative partnership with PT Ace Energy Service to improve the reliability of renewable energy-based electricity supply.',
         image: '/img/GUBERNUR.png',
-        link: '#'
+        link: 'https://sultengraya.com/read/210729/gandeng-ace-energy-anwar-hafid-hadirkan-listrik-tenaga-surya-di-sulteng/#google_vignette'
       },
       {
         id: 2,
@@ -28,7 +28,7 @@ export default function News() {
         title: 'PT ACE Energy Service Prepares International Standard Solar and Battery Development',
         excerpt: 'PT ACE Energy Service and UGM LKFT Research Center signed a MoA focusing on a bankable feasibility study for integrating Solar PV and Battery Energy Storage Systems (BESS) in Indonesia.',
         image: '/img/UGM.png',
-        link: '#'
+        link: 'https://lk.ft.ugm.ac.id/2026/05/12/pt-ace-energy-service-siapkan-pengembangan-energi-surya-dan-sistem-baterai-berstandar-internasional/'
       },
       {
         id: 3,
@@ -38,7 +38,7 @@ export default function News() {
         title: 'Supporting Net Zero Emission, Modern Cikande and PT Ace Energy Service Cooperate on Solar Panel Development',
         excerpt: 'PT Modern Industrial Estate partnered with PT ACE ENERGY SERVICE (ACEES) to transform the Modern Cikande industrial estate into a green, environment-friendly industrial zone.',
         image: '/img/BANTEN.png',
-        link: '#'
+        link: 'https://www.radarbanten.co.id/2026/04/17/dukung-net-zero-emission-modern-cikande-dan-pt-ace-energy-service-jalin-kerja-sama-pengembangan-solar-panel/'
       }
     ],
     id: [
@@ -50,7 +50,7 @@ export default function News() {
         title: 'Gandeng Ace Energy, Anwar Hafid Hadirkan Listrik Tenaga Surya di Sulteng',
         excerpt: 'Gubernur Sulawesi Tengah, Anwar Hafid menjalin kerja sama kolaboratif dengan PT Ace Energy Service dalam upaya meningkatkan keandalan pasokan listrik berbasis energi baru terbarukan.',
         image: '/img/GUBERNUR.png',
-        link: '#'
+        link: 'https://sultengraya.com/read/210729/gandeng-ace-energy-anwar-hafid-hadirkan-listrik-tenaga-surya-di-sulteng/#google_vignette'
       },
       {
         id: 2,
@@ -60,7 +60,7 @@ export default function News() {
         title: 'PT ACE Energy Service Siapkan Pengembangan Energi Surya dan Sistem Baterai Berstandar Internasional',
         excerpt: 'PT ACE Energy Service bersama LKFT UGM menandatangani MoA berfokus pada penyusunan studi kelayakan (feasibility study) berstandar bankable untuk integrasi PLTS dan sistem baterai BESS di Indonesia.',
         image: '/img/UGM.png',
-        link: '#'
+        link: 'https://lk.ft.ugm.ac.id/2026/05/12/pt-ace-energy-service-siapkan-pengembangan-energi-surya-dan-sistem-baterai-berstandar-internasional/'
       },
       {
         id: 3,
@@ -70,7 +70,7 @@ export default function News() {
         title: 'Dukung Net Zero Emission, Modern Cikande dan PT Ace Energy Service Jalin Kerja Sama Pengembangan Solar Panel',
         excerpt: 'PT Modern Industrial Estate secara resmi menggandeng PT ACE ENERGY SERVICE (ACEES) dalam mentransformasi kawasan industri Modern Cikande menjadi kawasan industri hijau yang ramah lingkungan.',
         image: '/img/BANTEN.png',
-        link: '#'
+        link: 'https://www.radarbanten.co.id/2026/04/17/dukung-net-zero-emission-modern-cikande-dan-pt-ace-energy-service-jalin-kerja-sama-pengembangan-solar-panel/'
       }
     ],
     ko: [
@@ -82,7 +82,7 @@ export default function News() {
         title: 'Ace Energy와 협력하여 Anwar Hafid 주지사, 중부 술라웨시에 태양광 발전 도입',
         excerpt: '안와르 하피드 중부 술라웨시 주지사는 신재생에너지 기반 전력 공급의 신뢰성을 향상시키기 위해 PT Ace Energy Service와 협력 관계를 구축했습니다.',
         image: '/img/GUBERNUR.png',
-        link: '#'
+        link: 'https://sultengraya.com/read/210729/gandeng-ace-energy-anwar-hafid-hadirkan-listrik-tenaga-surya-di-sulteng/#google_vignette'
       },
       {
         id: 2,
@@ -92,7 +92,7 @@ export default function News() {
         title: 'PT ACE Energy Service, 국제 표준 태양광 및 배터리 시스템 개발 준비',
         excerpt: 'PT ACE Energy Service와 UGM LKFT 연구센터는 인도네시아 태양광(PV) 및 배터리 에너지 저장 시스템(BESS) 통합 타당성 조사 수립에 중점을 둔 MoA를 체결했습니다.',
         image: '/img/UGM.png',
-        link: '#'
+        link: 'https://lk.ft.ugm.ac.id/2026/05/12/pt-ace-energy-service-siapkan-pengembangan-energi-surya-dan-sistem-baterai-berstandar-internasional/'
       },
       {
         id: 3,
@@ -102,7 +102,7 @@ export default function News() {
         title: '넷제로 배출 지원, Modern Cikande 및 PT Ace Energy Service 태양광 패널 개발 협력 체결',
         excerpt: 'PT Modern Industrial Estate는 Modern Cikande 산업단지를 환경 친화적인 친환경 산업단지로 전환하기 위해 PT ACE ENERGY SERVICE(ACEES)와 파트너십을 체결했습니다.',
         image: '/img/BANTEN.png',
-        link: '#'
+        link: 'https://www.radarbanten.co.id/2026/04/17/dukung-net-zero-emission-modern-cikande-dan-pt-ace-energy-service-jalin-kerja-sama-pengembangan-solar-panel/'
       }
     ]
   };
@@ -199,7 +199,7 @@ export default function News() {
                     </span>
                     <h3>{art.title}</h3>
                     <p>{art.excerpt}</p>
-                    <a href={art.link} className="article-readmore-btn">
+                    <a href={art.link} target="_blank" rel="noopener noreferrer" className="article-readmore-btn">
                       {language === 'ko' ? '자세히 보기' : language === 'id' ? 'Selengkapnya' : 'Read More'}
                       <i className="fas fa-arrow-right"></i>
                     </a>
