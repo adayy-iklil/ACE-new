@@ -2,7 +2,7 @@ import React, { createContext, useState, useContext } from 'react';
 
 const translations = {
     en: {
-        nav: { home: 'Home', about: 'About', services: 'Services', projects: 'Projects', contact: 'Contact', calculator: 'Calculator' },
+        nav: { home: 'Home', about: 'About', services: 'Services', projects: 'Projects', contact: 'Contact', calculator: 'Calculator', news: 'News' },
         hero: {
             badge: "Indonesia's No.1 Solar EPC & O&M",
             title: 'Powering Indonesia\'s <span>Solar Future</span>',
@@ -235,7 +235,7 @@ const translations = {
         }
     },
     id: {
-        nav: { home: 'Beranda', about: 'Tentang', services: 'Layanan', projects: 'Proyek', contact: 'Kontak', calculator: 'Kalkulator' },
+        nav: { home: 'Beranda', about: 'Tentang', services: 'Layanan', projects: 'Proyek', contact: 'Kontak', calculator: 'Kalkulator', news: 'Berita' },
         hero: {
             badge: 'No.1 EPC & O&M Tenaga Surya di Indonesia',
             title: 'Mendorong <span>Masa Depan Surya</span> Indonesia',
@@ -468,7 +468,7 @@ const translations = {
         }
     },
     ko: {
-        nav: { home: '홈', about: '회사소개', services: '서비스', projects: '프로젝트', contact: '문의', calculator: '계산기' },
+        nav: { home: '홈', about: '회사소개', services: '서비스', projects: '프로젝트', contact: '문의', calculator: '계산기', news: '뉴스' },
         hero: {
             badge: '인도네시아 No.1 태양광 EPC & O&M',
             title: '인도네시아의 <span>태양광 미래</span>를 이끌다',

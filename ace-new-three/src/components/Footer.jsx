@@ -21,11 +21,11 @@ export default function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-brand">
-            <img 
-              src="/img/logoace.png" 
-              alt="ACE ENERGY SERVICE" 
-              className="logo-footer-img" 
-              onError={(e) => { e.target.src = 'https://placehold.co/120x40/0A2B4E/white?text=ACE'; }} 
+            <img
+              src="/img/logoace.png"
+              alt="ACE ENERGY SERVICE"
+              className="logo-footer-img"
+              onError={(e) => { e.target.src = 'https://placehold.co/120x40/0A2B4E/white?text=ACE'; }}
             />
             <p>{t('footer.tagline')}</p>
             <div className="footer-social">
@@ -47,6 +47,7 @@ export default function Footer() {
               <li><button onClick={() => handleLinkClick('/')} style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textAlign: 'left', font: 'inherit' }}>{t('nav.home')}</button></li>
               <li><button onClick={() => handleLinkClick('/about')} style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textAlign: 'left', font: 'inherit' }}>{t('nav.about')}</button></li>
               <li><button onClick={() => handleLinkClick('/services')} style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textAlign: 'left', font: 'inherit' }}>{t('nav.services')}</button></li>
+              <li><button onClick={() => handleLinkClick('/news')} style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textAlign: 'left', font: 'inherit' }}>{t('nav.news')}</button></li>
               <li><button onClick={() => handleLinkClick('/projects')} style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textAlign: 'left', font: 'inherit' }}>{t('nav.projects')}</button></li>
               <li><button onClick={() => handleLinkClick('/contact')} style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textAlign: 'left', font: 'inherit' }}>{t('nav.contact')}</button></li>
             </ul>

@@ -70,7 +70,6 @@ export default function Home() {
         <div className="hero-video-bg">
           <video autoPlay muted loop playsInline>
             <source src="/img/profilAceNew.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
           </video>
         </div>
         <div className="hero-overlay"></div>
