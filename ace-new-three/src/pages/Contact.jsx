@@ -8,15 +8,41 @@ export default function Contact() {
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSuccess(true);
-    setName('');
-    setEmail('');
-    setPhone('');
-    setMessage('');
-    setTimeout(() => setSuccess(false), 5000);
+    setLoading(true);
+
+    fetch("https://formsubmit.co/ajax/admin@aceenergyservice.com", {
+      method: "POST",
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        "Nama / Name": name,
+        "Email": email,
+        "No. Telepon / Phone": phone,
+        "Pesan / Message": message,
+        "_subject": `New Inquiry from ACE Energy Website - ${name}`
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      setLoading(false);
+      setSuccess(true);
+      setName('');
+      setEmail('');
+      setPhone('');
+      setMessage('');
+      setTimeout(() => setSuccess(false), 5000);
+    })
+    .catch(err => {
+      setLoading(false);
+      console.error("Failed to send email:", err);
+      alert(language === 'id' ? 'Gagal mengirim pesan. Silakan coba kembali.' : 'Failed to send message. Please try again.');
+    });
   };
 
   const getSuccessMsg = () => {
@@ -109,7 +135,9 @@ export default function Contact() {
                     required
                   ></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary">{t('contact.form.submit')}</button>
+                 <button type="submit" className="btn btn-primary" disabled={loading}>
+                   {loading ? (language === 'id' ? 'Mengirim...' : language === 'ko' ? '전송 중...' : 'Sending...') : t('contact.form.submit')}
+                 </button>
               </form>
               {success && (
                 <div style={{ marginTop: '16px', color: '#f7931e', fontWeight: '600', fontSize: '0.95rem' }}>
