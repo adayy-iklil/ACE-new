@@ -6,7 +6,7 @@ const translations = {
         hero: {
             badge: "Indonesia's No.1 Solar EPC & O&M",
             title: 'Powering Indonesia\'s <span>Solar Future</span>',
-            subtitle: 'PT. ACE ENERGY SERVICE delivers world-class solar PV solutions — from EPC to O&M — for a sustainable tomorrow.',
+            subtitle: 'PT. ACE ENERGY SERVICE provides world-class solar PV solutions from EPC to O&M for sustainable development.',
             cta1: 'Explore Services',
             cta2: 'Contact Us'
         },
@@ -471,9 +471,9 @@ const translations = {
         nav: { home: '홈', about: '회사소개', services: '서비스', projects: '프로젝트', contact: '문의', calculator: '계산기', news: '뉴스' },
         hero: {
             badge: '인도네시아 No.1 태양광 EPC & O&M',
-            title: '인도네시아의 <span>태양광 미래</span>를 이끌다',
-            subtitle: 'PT. ACE ENERGY SERVICE는 EPC부터 O&M까지 세계적 수준의 태양광 PV 솔루션을 제공하여 지속 가능한 내일을 만듭니다.',
             cta1: '서비스 살펴보기',
+            title: '인도네시아의 <span>태양광 미래를 </span> 이끈다',
+            subtitle: 'PT. ACE ENERGY SERVICE는 지속가능한 내일을 위해 EPC부터 O&M까지 세계적 수준의 태양광 PV 솔루션을 제공합니다.',
             cta2: '문의하기'
         },
         glance: {
