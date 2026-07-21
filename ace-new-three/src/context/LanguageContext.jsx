@@ -479,11 +479,11 @@ const translations = {
         glance: {
             tag: '회사 개요',
             title: 'ACE ENERGY SERVICE',
-            subtitle: 'PT. ACE ENERGY SERVICE는 인도네시아 최대 태양광 프로젝트 개발사입니다.',
-            card1: { title: '태양광 EPC 전문가', desc: '태양광 PV 시스템을 위한 종합 설계, 조달, 시공.' },
-            card2: { title: 'O&M 전문가', desc: '24/7 모니터링, 예방 유지보수, 성능 최적화.' },
-            card3: { title: '지속가능성 중점', desc: '신뢰할 수 있는 태양광 솔루션으로 인도네시아의 청정 에너지 전환을 주도합니다.' },
-            card4: { title: '30년 이상의 전통', desc: 'ACE E&C의 B2 등급 건설 면허 및 다분야 전문성의 지원을 받습니다.' }
+            subtitle: 'PT. ACE ENERGY SERVICE 인도네시아 태양광 프로젝트 전문 개발사.',
+            card1: { title: '태양광 EPC 전문 회사', desc: '태양광 PV 시스템을 위한 종합 설계, 조달, 시공.' },
+            card2: { title: 'O&M 전문회사', desc: '24/7 모니터링, 예방 유지보수, 성능 최적화.' },
+            card3: { title: '지속가능성 중심', desc: '신뢰할 수 있는 태양광 솔루션으로 인도네시아의 청정 에너지 전환을 주도합니다.' },
+            card4: { title: '30년 이상의 전통 ', desc: 'ACE E&C의 B2 등급 건설 면허 및 여러 분야에서 전문적인 지원을 받습니다. ' }
         },
         stats: { projects: '완료된 프로젝트', years: '경험 연수', revenue: '매출 (억 IDR)', team: '전문가 팀' },
         about: {
@@ -516,8 +516,8 @@ const translations = {
         },
         services: {
             tag: '핵심 서비스',
-            title: '우수성에 대한 헌신',
-            subtitle: '"올인원 통합 태양광 에너지 솔루션을 손끝에서"',
+            title: '차별화된 Service제공을 약속합니다',
+            subtitle: '"올인원 통합 태양광 에너지 솔루션 제공"',
             tab1: 'O&M',
             tab2: '상업용 EPC',
             tab3: '주거용 EPC',
@@ -705,32 +705,32 @@ const translations = {
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguageState] = useState(() => {
-    return localStorage.getItem('lang3') || 'en';
-  });
+    const [language, setLanguageState] = useState(() => {
+        return localStorage.getItem('lang3') || 'en';
+    });
 
-  const setLanguage = (lang) => {
-    setLanguageState(lang);
-    localStorage.setItem('lang3', lang);
-  };
+    const setLanguage = (lang) => {
+        setLanguageState(lang);
+        localStorage.setItem('lang3', lang);
+    };
 
-  const t = (key) => {
-    const keys = key.split('.');
-    let val = translations[language];
-    for (let k of keys) {
-      if (val && val[k] !== undefined) val = val[k];
-      else return key;
-    }
-    return val;
-  };
+    const t = (key) => {
+        const keys = key.split('.');
+        let val = translations[language];
+        for (let k of keys) {
+            if (val && val[k] !== undefined) val = val[k];
+            else return key;
+        }
+        return val;
+    };
 
-  return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
-      {children}
-    </LanguageContext.Provider>
-  );
+    return (
+        <LanguageContext.Provider value={{ language, setLanguage, t }}>
+            {children}
+        </LanguageContext.Provider>
+    );
 }
 
 export function useLanguage() {
-  return useContext(LanguageContext);
+    return useContext(LanguageContext);
 }
