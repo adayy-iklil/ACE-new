@@ -35,7 +35,7 @@ export default function Footer() {
               <a href="https://www.youtube.com/@aceenergyservice12" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-youtube"></i>
               </a>
-              <a href="https://www.instagram.com/aceenergyservice/?hl=ar" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/aceenergyservice" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-instagram"></i>
               </a>
             </div>
